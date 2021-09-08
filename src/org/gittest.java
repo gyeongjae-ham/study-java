@@ -8,5 +8,6 @@ public class gittest {
         System.out.println("aldfjldsjfa;");
         System.out.println("제발 좀 되라");
         System.out.println("왜 안되는 거지?");
+        System.out.println("돼요 이제 진짜");
     }
 }
