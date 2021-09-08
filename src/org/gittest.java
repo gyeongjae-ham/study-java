@@ -6,5 +6,6 @@ public class gittest {
         System.out.println("2차 테스트");
         System.out.println("3밍;ㅏㄹㄴㅇ럼ㄴ");
         System.out.println("aldfjldsjfa;");
+        System.out.println("제발 좀 되라");
     }
 }
