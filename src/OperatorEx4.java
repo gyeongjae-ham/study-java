@@ -5,7 +5,7 @@ public class OperatorEx4 {
         Scanner scanner = new Scanner(System.in);
         char ch = ' ';
 
-        System.out.printf("문자를 하나 입력하세요. >");
+        System.out.print("문자를 하나 입력하세요. >");
 
         String input = scanner.nextLine();
         ch = input.charAt(0);
