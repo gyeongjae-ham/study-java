@@ -25,6 +25,6 @@ public class ArrayEx5 {
                 System.out.print(numArr[k]); // 정렬된 결과를 울력한다.
             }
             System.out.println();
-        }
+        };
     }
 }
