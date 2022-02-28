@@ -7,7 +7,7 @@ class Card {
     static int width = 100; // 폭 클래스 변수
     static int height = 250; // 높이 클래스 변수
 }
-public class Cardtest {
+public class CardTest {
     public static void main(String[] args) {
         System.out.println("Card.width = " + Card.width);
         System.out.println("Card.height = " + Card.height);
