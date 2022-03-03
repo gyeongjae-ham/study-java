@@ -34,6 +34,9 @@ class Computer extends Product {
 class Buyer {
     int money = 1000;
     int bonusPoint = 0;
+    Product[] item = new Product[10]; // 구입한 제품을 저장하기 위한 배열, but 10개 이상 제품을 구입할 수 없는 문제
+    // Vector 클래스를 이용하면 된다. Vector 클래스는 배열의 크기를 알아서 관리해 준다
+    int i = 0;
 
     void buy(Product p) {
         if (money < p.price) {
@@ -43,6 +46,7 @@ class Buyer {
 
         money -= p.price;
         bonusPoint += p.bonusPoint;
+        item[i++] = p; // 제품을 Product[] item에 저장한다.
         System.out.println(p + "을/를 구입하셨습니다.");
     }
 }
