@@ -1,5 +1,9 @@
-# javapractice
+# Organize the contents
 
-For Java practice repo.
+For organize the contents about java
 
-Now, just Java basic skills after add spring skills
+Contents about Java with Study group members
+
+1. The Essence of Java
+2. Effective Java
+3. Tobi's spring(after watch lecture)
