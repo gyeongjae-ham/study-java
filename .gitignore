@@ -183,6 +183,6 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,intellij,git,java
 
-.DS_Store
+.DS_Store*
 .idea/*
 .idea*
