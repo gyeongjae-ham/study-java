@@ -1,9 +1,0 @@
-package the_essence_of_java.third;
-
-public class OperatorEx3 {
-    public static void main(String[] args) {
-        char lowerCase = 'a';
-        char upperCase = (char) (lowerCase - 32);
-        System.out.println(upperCase);
-    }
-}
