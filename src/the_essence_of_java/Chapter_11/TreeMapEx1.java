@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_11;
+
 import java.util.*;
 
 class TreeMapEx1 {
@@ -11,13 +13,13 @@ class TreeMapEx1 {
 				Integer value = (Integer)map.get(data[i]);
 				map.put(data[i], new Integer(value.intValue() + 1));
 			} else {
-				map.put(data[i], new Integer(1));			
+				map.put(data[i], new Integer(1));
 			}
 		}
 
 		Iterator it = map.entrySet().iterator();
 
-		System.out.println("= ±âº»Á¤·Ä =");
+		System.out.println("= ê¸°ë³¸ì •ë ¬ =");
 		while(it.hasNext()) {
 			Map.Entry entry = (Map.Entry)it.next();
 			int value = ((Integer)entry.getValue()).intValue();
@@ -25,23 +27,23 @@ class TreeMapEx1 {
 		}
 		System.out.println();
 
-		// mapÀ» ArrayList·Î º¯È¯ÇÑ ´ÙÀ½¿¡ Collectons.sort()·Î Á¤·Ä
+		// mapì„ ArrayListë¡œ ë³€í™˜í•œ ë‹¤ìŒì— Collectons.sort()ë¡œ ì •ë ¬
 		Set set = map.entrySet();
-		List list = new ArrayList(set);	// ArrayList(Collection c) 
-		
-		// static void sort(List list, Comparator c)  
+		List list = new ArrayList(set);	// ArrayList(Collection c)
+
+		// static void sort(List list, Comparator c)
 		Collections.sort(list, new ValueComparator());
 
 		it = list.iterator();
 
-		System.out.println("= °ªÀÇ Å©±â°¡ Å« ¼ø¼­·Î Á¤·Ä =");		
+		System.out.println("= ê°’ì˜ í¬ê¸°ê°€ í° ìˆœì„œë¡œ ì •ë ¬ =");
 		while(it.hasNext()) {
 			Map.Entry entry = (Map.Entry)it.next();
 			int value = ((Integer)entry.getValue()).intValue();
 			System.out.println(entry.getKey() + " : " + printBar('#', value) + " " + value );
 		}
 
-	} // 	public static void main(String[] args) 
+	} // 	public static void main(String[] args)
 
 	static class ValueComparator implements Comparator {
 		public int compare(Object o1, Object o2) {
@@ -53,18 +55,18 @@ class TreeMapEx1 {
 				int v2 = ((Integer)e2.getValue()).intValue();
 
 				return  v2 - v1;
-			} 
+			}
 			return -1;
 		}
 	}	// 	static class ValueComparator implements Comparator {
 
-	public static String printBar(char ch, int value) { 
-		char[] bar = new char[value]; 
+	public static String printBar(char ch, int value) {
+		char[] bar = new char[value];
 
-		for(int i=0; i < bar.length; i++) { 
-			bar[i] = ch; 
-		} 
+		for(int i=0; i < bar.length; i++) {
+			bar[i] = ch;
+		}
 
-		return new String(bar); 
-	} 
+		return new String(bar);
+	}
 }

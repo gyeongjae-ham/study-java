@@ -1,10 +1,12 @@
+package the_essence_of_java.Chapter_13;
+
 import javax.swing.JOptionPane;
 
 class ThreadEx6 {
 	public static void main(String[] args) throws Exception
 	{
-		String input = JOptionPane.showInputDialog("¾Æ¹« °ªÀÌ³ª ÀÔ·ÂÇÏ¼¼¿ä."); 
-		System.out.println("ÀÔ·ÂÇÏ½Å °ªÀº " + input + "ÀÔ´Ï´Ù.");
+		String input = JOptionPane.showInputDialog("ì•„ë¬´ ê°’ì´ë‚˜ ìž…ë ¥í•˜ì„¸ìš”.");
+		System.out.println("ìž…ë ¥í•˜ì‹  ê°’ì€ " + input + "ìž…ë‹ˆë‹¤.");
 
 		for(int i=10; i > 0; i--) {
 			System.out.println(i);

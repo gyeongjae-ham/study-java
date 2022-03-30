@@ -1,14 +1,16 @@
+package the_essence_of_java.Chapter_12;
+
 abstract class MyEnum<T extends MyEnum<T>> implements Comparable<T> {
 	static int id = 0;
-		
+
 	int ordinal;
 	String name = "";
 
 	public int ordinal() { return ordinal; }
-	
+
 	MyEnum(String name) {
 		this.name = name;
-		ordinal = id++;	
+		ordinal = id++;
 	}
 
 	public int compareTo(T t) {
@@ -26,12 +28,12 @@ abstract class MyTransportation extends MyEnum {
 	static final MyTransportation SHIP  = new MyTransportation("SHIP", 100) {
 		int fare(int distance) { return distance * BASIC_FARE; }
 	};
-   static final MyTransportation AIRPLANE = 
-                                           new MyTransportation("AIRPLANE", 300) {
-		int fare(int distance) { return distance * BASIC_FARE; }
-	};
+	static final MyTransportation AIRPLANE =
+			new MyTransportation("AIRPLANE", 300) {
+				int fare(int distance) { return distance * BASIC_FARE; }
+			};
 
-	abstract int fare(int distance); // 추상 메서드
+	abstract int fare(int distance);
 
 	protected final int BASIC_FARE;
 
@@ -51,7 +53,7 @@ class EnumEx4 {
 		MyTransportation t3 = MyTransportation.TRAIN;
 		MyTransportation t4 = MyTransportation.SHIP;
 		MyTransportation t5 = MyTransportation.AIRPLANE;
-			
+
 		System.out.printf("t1=%s, %d%n", t1.name(), t1.ordinal());
 		System.out.printf("t2=%s, %d%n", t2.name(), t2.ordinal());
 		System.out.printf("t3=%s, %d%n", t3.name(), t3.ordinal());

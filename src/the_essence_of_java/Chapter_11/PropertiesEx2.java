@@ -1,9 +1,11 @@
+package the_essence_of_java.Chapter_11;
+
 import java.io.*;
 import java.util.*;
 
 class PropertiesEx2 {
 	public static void main(String[] args) {
-		// commandline¿¡¼­ inputfileÀ» ÁöÁ¤ÇØÁÖÁö ¾ÊÀ¸¸é ÇÁ·Î±×·¥À» Á¾·áÇÑ´Ù.
+		// commandlineì—ì„œ inputfileì„ ì§€ì •í•´ì£¼ì§€ ì•Šìœ¼ë©´ í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•œë‹¤.
 		if(args.length != 1) {
 			System.out.println("USAGE: java PropertiesEx2 INPUTFILENAME");
 			System.exit(0);
@@ -16,7 +18,7 @@ class PropertiesEx2 {
 		try {
 			prop.load(new FileInputStream(inputFile));
 		} catch(IOException e) {
-			System.out.println("ÁöÁ¤µÈ ÆÄÀÏÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("ì§€ì •ëœ íŒŒì¼ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			System.exit(0);
 		}
 
@@ -39,10 +41,10 @@ class PropertiesEx2 {
 			sum += intValue;
 		}
 
-		System.out.println("ÀÌ¸§ :"  + name);		
-		System.out.println("ÃÖ´ë°ª :" + max);
-		System.out.println("ÃÖ¼Ò°ª :" + min);
-		System.out.println("ÇÕ°è :"  + sum);
-		System.out.println("Æò±Õ :"  + (sum*100.0/data.length)/100);
+		System.out.println("ì´ë¦„ :"  + name);
+		System.out.println("ìµœëŒ€ê°’ :" + max);
+		System.out.println("ìµœì†Œê°’ :" + min);
+		System.out.println("í•©ê³„ :"  + sum);
+		System.out.println("í‰ê·  :"  + (sum*100.0/data.length)/100);
 	}
 }

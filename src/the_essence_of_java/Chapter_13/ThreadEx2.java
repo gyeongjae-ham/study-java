@@ -1,4 +1,6 @@
- class ThreadEx2 {
+package the_essence_of_java.Chapter_13;
+
+class ThreadEx2 {
 	public static void main(String args[]) throws Exception {
 		ThreadEx2_1 t1 = new ThreadEx2_1();
 		t1.start();

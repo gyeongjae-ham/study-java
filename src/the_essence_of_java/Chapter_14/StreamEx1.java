@@ -1,21 +1,23 @@
+package the_essence_of_java.Chapter_14;
+
 import java.util.*;
 import java.util.stream.*;
 
 class StreamEx1 {
 	public static void main(String[] args) {
-	     Stream<Student> studentStream = Stream.of(
-							new Student("ÀÌÀÚ¹Ù", 3, 300),
-							new Student("±èÀÚ¹Ù", 1, 200),
-							new Student("¾ÈÀÚ¹Ù", 2, 100),
-							new Student("¹ÚÀÚ¹Ù", 2, 150),
-							new Student("¼ÒÀÚ¹Ù", 1, 200),
-							new Student("³ªÀÚ¹Ù", 3, 290),
-							new Student("°¨ÀÚ¹Ù", 3, 180)
-						);
+		Stream<Student> studentStream = Stream.of(
+				new Student("ì´ìë°”", 3, 300),
+				new Student("ê¹€ìë°”", 1, 200),
+				new Student("ì•ˆìë°”", 2, 100),
+				new Student("ë°•ìë°”", 2, 150),
+				new Student("ì†Œìë°”", 1, 200),
+				new Student("ë‚˜ìë°”", 3, 290),
+				new Student("ê°ìë°”", 3, 180)
+		);
 
-	     studentStream.sorted(Comparator.comparing(Student::getBan) // ¹İº° Á¤·Ä
-			    	  .thenComparing(Comparator.naturalOrder()))    // ±âº» Á¤·Ä
-					  .forEach(System.out::println);
+		studentStream.sorted(Comparator.comparing(Student::getBan) // ë°˜ë³„ ì •ë ¬
+						.thenComparing(Comparator.naturalOrder()))    // ê¸°ë³¸ ì •ë ¬
+				.forEach(System.out::println);
 	}
 }
 
@@ -24,22 +26,22 @@ class Student implements Comparable<Student> {
 	int ban;
 	int totalScore;
 
-	Student(String name, int ban, int totalScore) { 
+	Student(String name, int ban, int totalScore) {
 		this.name =name;
 		this.ban =ban;
 		this.totalScore =totalScore;
 	}
 
-	public String toString() { 
-	    return String.format("[%s, %d, %d]", name, ban, totalScore).toString(); 
+	public String toString() {
+		return String.format("[%s, %d, %d]", name, ban, totalScore).toString();
 	}
 
 	String getName()     { return name;}
 	int getBan()         { return ban;}
 	int getTotalScore()  { return totalScore;}
 
-   // ÃÑÁ¡ ³»¸²Â÷¼øÀ» ±âº» Á¤·Ä·Î ÇÑ´Ù.
-	public int compareTo(Student s) { 
+	// ì´ì  ë‚´ë¦¼ì°¨ìˆœì„ ê¸°ë³¸ ì •ë ¬ë¡œ í•œë‹¤.
+	public int compareTo(Student s) {
 		return s.totalScore - this.totalScore;
 	}
 }

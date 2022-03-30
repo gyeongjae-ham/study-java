@@ -1,4 +1,6 @@
- class ThreadEx19 {
+package the_essence_of_java.Chapter_13;
+
+class ThreadEx19 {
 	static long startTime = 0;
 
 	public static void main(String args[]) {
@@ -10,11 +12,11 @@
 		startTime = System.currentTimeMillis();
 
 		try {
-			th1.join();	// main¾²·¹µå°¡ th1ÀÇ ÀÛ¾÷ÀÌ ³¡³¯ ¶§±îÁö ±â´Ù¸°´Ù.
-			th2.join();	// main¾²·¹µå°¡ th2ÀÇ ÀÛ¾÷ÀÌ ³¡³¯ ¶§±îÁö ±â´Ù¸°´Ù.
+			th1.join();	// mainì“°ë ˆë“œê°€ th1ì˜ ì‘ì—…ì´ ëë‚  ë•Œê¹Œì§€ ê¸°ë‹¤ë¦°ë‹¤.
+			th2.join();	// mainì“°ë ˆë“œê°€ th2ì˜ ì‘ì—…ì´ ëë‚  ë•Œê¹Œì§€ ê¸°ë‹¤ë¦°ë‹¤.
 		} catch(InterruptedException e) {}
 
-		System.out.print("¼Ò¿ä½Ã°£:" + (System.currentTimeMillis() - ThreadEx19.startTime));
+		System.out.print("ì†Œìš”ì‹œê°„:" + (System.currentTimeMillis() - ThreadEx19.startTime));
 	} // main
 }
 

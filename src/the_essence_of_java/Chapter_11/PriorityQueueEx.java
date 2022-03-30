@@ -1,20 +1,22 @@
+package the_essence_of_java.Chapter_11;
+
 import java.util.*;
 
 class PriorityQueueEx {
 	public static void main(String[] args) {
 		Queue pq = new PriorityQueue();
-		pq.offer(3);  // pq.offer(new Integer(3)); ¿ÀÅä¹Ú½Ì
+		pq.offer(3);  // pq.offer(new Integer(3)); ì˜¤í† ë°•ì‹±
 		pq.offer(1);
 		pq.offer(5);
 		pq.offer(2);
 		pq.offer(4);
 
-		System.out.println(pq); // pqÀÇ ³»ºÎ ¹è¿­À» Ãâ·Â
+		System.out.println(pq); // pqì˜ ë‚´ë¶€ ë°°ì—´ì„ ì¶œë ¥
 
 		Object obj = null;
 
-		// PriorityQueue¿¡ ÀúÀåµÈ ¿ä¼Ò¸¦ ÇÏ³ª¾¿ ²¨³½´Ù.
-		while((obj = pq.poll())!=null) 
+		// PriorityQueueì— ì €ì¥ëœ ìš”ì†Œë¥¼ í•˜ë‚˜ì”© êº¼ë‚¸ë‹¤.
+		while((obj = pq.poll())!=null)
 			System.out.println(obj);
 	}
 }

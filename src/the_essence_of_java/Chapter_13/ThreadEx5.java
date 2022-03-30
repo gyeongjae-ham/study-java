@@ -1,4 +1,6 @@
- class ThreadEx5 {
+package the_essence_of_java.Chapter_13;
+
+class ThreadEx5 {
 	static long startTime = 0;
 
 	public static void main(String args[]) {
@@ -10,7 +12,7 @@
 			System.out.print("-");
 		}
 
-		System.out.print("�ҿ�ð�1:" + (System.currentTimeMillis() - ThreadEx5.startTime));
+		System.out.print("가나다라1:" + (System.currentTimeMillis() - ThreadEx5.startTime));
 	}
 }
 
@@ -20,6 +22,6 @@ class ThreadEx5_1 extends Thread {
 			System.out.print("|");
 		}
 
-		System.out.print("�ҿ�ð�2:" + (System.currentTimeMillis() - ThreadEx5.startTime));
+		System.out.print("가나다라2:" + (System.currentTimeMillis() - ThreadEx5.startTime));
 	}
 }

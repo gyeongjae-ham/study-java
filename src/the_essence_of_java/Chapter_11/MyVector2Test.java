@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_11;
+
 import java.util.*;
 
 class MyVector2Test {
@@ -9,13 +11,13 @@ class MyVector2Test {
 		v.add("3");
 		v.add("4");
 
-		System.out.println("»èÁ¦ Àü : " + v);
+		System.out.println("ê°€ë‚˜ë‹¤ë¼ë§ˆ : " + v);
 		Iterator it = v.iterator();
 		it.next();
 		it.remove();
 		it.next();
 		it.remove();
 
-		System.out.println("»èÁ¦ ÈÄ : " + v);
+		System.out.println("ê°€ë‚˜ë‹¤ë¼ë§ˆ : " + v);
 	}
 }

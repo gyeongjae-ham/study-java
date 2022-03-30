@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_13;
+
 class ThreadEx22 {
 	public static void main(String args[]) {
 		Runnable r = new RunnableEx22();
@@ -6,14 +8,14 @@ class ThreadEx22 {
 	}
 }
 
-class Account {
-	private int balance = 1000; // privateÀ¸·Î ÇØ¾ß µ¿±âÈ­°¡ ÀÇ¹Ì°¡ ÀÖ´Ù.
+class Account1 {
+	private int balance = 1000; // privateìœ¼ë¡œ í•´ì•¼ ë™ê¸°í™”ê°€ ì˜ë¯¸ê°€ ìˆë‹¤.
 
 	public  int getBalance() {
 		return balance;
 	}
 
-	public synchronized void withdraw(int money){ // synchronized·Î ¸Ş¼­µå¸¦ µ¿±âÈ­
+	public synchronized void withdraw(int money){ // synchronizedë¡œ ë©”ì„œë“œë¥¼ ë™ê¸°í™”
 		if(balance >= money) {
 			try { Thread.sleep(1000);} catch(InterruptedException e) {}
 			balance -= money;
@@ -22,11 +24,11 @@ class Account {
 }
 
 class RunnableEx22 implements Runnable {
-	Account acc = new Account();
+	Account1 acc = new Account1();
 
 	public void run() {
 		while(acc.getBalance() > 0) {
-			// 100, 200, 300ÁßÀÇ ÇÑ °ªÀ» ÀÓÀ¸·Î ¼±ÅÃÇØ¼­ Ãâ±İ(withdraw)
+			// 100, 200, 300ì¤‘ì˜ í•œ ê°’ì„ ì„ìœ¼ë¡œ ì„ íƒí•´ì„œ ì¶œê¸ˆ(withdraw)
 			int money = (int)(Math.random() * 3 + 1) * 100;
 			acc.withdraw(money);
 			System.out.println("balance:"+acc.getBalance());

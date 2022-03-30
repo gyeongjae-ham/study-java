@@ -1,36 +1,38 @@
+package the_essence_of_java.Chapter_11;
+
 import java.util.*;
 
 public class ExpValidCheck {
 	public static void main(String[] args) {
-	     if(args.length!=1){
-               System.out.println("Usage : java ExpValidCheck \"EXPRESSION\"");
-               System.out.println("Example : java ExpValidCheck \"((2+3)*1)+3\"");		  
-			   System.exit(0);			
-	     }
-		
+		if(args.length!=1){
+			System.out.println("Usage : java ExpValidCheck \"EXPRESSION\"");
+			System.out.println("Example : java ExpValidCheck \"((2+3)*1)+3\"");
+			System.exit(0);
+		}
+
 		Stack st = new Stack();
 		String expression = args[0];
-		
+
 		System.out.println("expression:"+expression);
 
 		try {
 			for(int i=0; i < expression.length();i++){
-				char ch = expression.charAt(i); 
-				
+				char ch = expression.charAt(i);
+
 				if(ch=='('){
 					st.push(ch+"");
 				} else if(ch==')') {
 					st.pop();
 				}
 			}
-			
+
 			if(st.isEmpty()){
-				System.out.println("°ýÈ£°¡ ÀÏÄ¡ÇÕ´Ï´Ù.");
+				System.out.println("ê´„í˜¸ê°€ ì¼ì¹˜í•©ë‹ˆë‹¤.");
 			} else {
-				System.out.println("°ýÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
+				System.out.println("ê´„í˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 			}
 		} catch (EmptyStackException e) {
-			System.out.println("°ýÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");		
+			System.out.println("ê´„í˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 		} // try
 	}
 }

@@ -1,11 +1,13 @@
+package the_essence_of_java.Chapter_13;
+
 import java.util.ArrayList;
 
-class Customer implements Runnable {
-	private Table table;
+class Customer1 implements Runnable {
+	private Table1 table;
 	private String food;
 
-	Customer(Table table, String food) {
-		this.table = table;  
+	Customer1(Table1 table, String food) {
+		this.table = table;
 		this.food  = food;
 	}
 
@@ -13,10 +15,10 @@ class Customer implements Runnable {
 		while(true) {
 			try { Thread.sleep(10);} catch(InterruptedException e) {}
 			String name = Thread.currentThread().getName();
-			
+
 			if(eatFood())
 				System.out.println(name + " ate a " + food);
-			else 
+			else
 				System.out.println(name + " failed to eat. :(");
 		} // while
 	}
@@ -24,10 +26,10 @@ class Customer implements Runnable {
 	boolean eatFood() { return table.remove(food); }
 }
 
-class Cook implements Runnable {
-	private Table table;
-	
-	Cook(Table table) {	this.table = table; }
+class Cook1 implements Runnable {
+	private Table1 table;
+
+	Cook1(Table1 table) {	this.table = table; }
 
 	public void run() {
 		while(true) {
@@ -38,24 +40,24 @@ class Cook implements Runnable {
 	}
 }
 
-class Table {
+class Table1 {
 	String[] dishNames = { "donut","donut","burger" };
 	final int MAX_FOOD = 6;
 	private ArrayList<String> dishes = new ArrayList<>();
 
-	public synchronized void add(String dish) { // synchronized¸¦ Ãß°¡
-		if(dishes.size() >= MAX_FOOD)	
+	public synchronized void add(String dish) { // synchronizedë¥¼ ì¶”ê°€
+		if(dishes.size() >= MAX_FOOD)
 			return;
 		dishes.add(dish);
 		System.out.println("Dishes:" + dishes.toString());
 	}
 
 	public boolean remove(String dishName) {
-		synchronized(this) {	
+		synchronized(this) {
 			while(dishes.size()==0) {
 				String name = Thread.currentThread().getName();
 				System.out.println(name+" is waiting.");
-				try { Thread.sleep(500);} catch(InterruptedException e) {}	
+				try { Thread.sleep(500);} catch(InterruptedException e) {}
 			}
 
 			for(int i=0; i<dishes.size();i++)
@@ -73,12 +75,12 @@ class Table {
 
 class ThreadWaitEx2 {
 	public static void main(String[] args) throws Exception {
-		Table table = new Table(); // ¿©·¯ ¾²·¹µå°¡ °øÀ¯ÇÏ´Â °´Ã¼
+		Table1 table = new Table1(); // ì—¬ëŸ¬ ì“°ë ˆë“œê°€ ê³µìœ í•˜ëŠ” ê°ì²´
 
-		new Thread(new Cook(table), "COOK1").start();
-		new Thread(new Customer(table, "donut"),  "CUST1").start();
-		new Thread(new Customer(table, "burger"), "CUST2").start();
-	
+		new Thread(new Cook1(table), "COOK1").start();
+		new Thread(new Customer1(table, "donut"),  "CUST1").start();
+		new Thread(new Customer1(table, "burger"), "CUST2").start();
+
 		Thread.sleep(5000);
 		System.exit(0);
 	}

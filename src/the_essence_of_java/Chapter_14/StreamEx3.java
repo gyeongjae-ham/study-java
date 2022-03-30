@@ -1,26 +1,28 @@
+package the_essence_of_java.Chapter_14;
+
 import java.util.*;
 import java.util.stream.*;
 
 class StreamEx3 {
 	public static void main(String[] args) {
-		Student[] stuArr = {
-			new Student("ÀÌÀÚ¹Ù", 3, 300),
-			new Student("±èÀÚ¹Ù", 1, 200),
-			new Student("¾ÈÀÚ¹Ù", 2, 100),
-			new Student("¹ÚÀÚ¹Ù", 2, 150),
-			new Student("¼ÒÀÚ¹Ù", 1, 200),
-			new Student("³ªÀÚ¹Ù", 3, 290),
-			new Student("°¨ÀÚ¹Ù", 3, 180)	
+		Student1[] stuArr = {
+				new Student1("ì´ìë°”", 3, 300),
+				new Student1("ê¹€ìë°”", 1, 200),
+				new Student1("ì•ˆìë°”", 2, 100),
+				new Student1("ë°•ìë°”", 2, 150),
+				new Student1("ì†Œìë°”", 1, 200),
+				new Student1("ë‚˜ìë°”", 3, 290),
+				new Student1("ê°ìë°”", 3, 180)
 		};
 
-		Stream<Student> stuStream = Stream.of(stuArr);
+		Stream<Student1> stuStream = Stream.of(stuArr);
 
-		stuStream.sorted(Comparator.comparing(Student::getBan)
-				 .thenComparing(Comparator.naturalOrder()))
-				 .forEach(System.out::println);
+		stuStream.sorted(Comparator.comparing(Student1::getBan)
+						.thenComparing(Comparator.naturalOrder()))
+				.forEach(System.out::println);
 
-		stuStream = Stream.of(stuArr); // ½ºÆ®¸²À» ´Ù½Ã »ı¼ºÇÑ´Ù. 
-	     IntStream stuScoreStream= stuStream.mapToInt(Student::getTotalScore);
+		stuStream = Stream.of(stuArr); // ìŠ¤íŠ¸ë¦¼ì„ ë‹¤ì‹œ ìƒì„±í•œë‹¤.
+		IntStream stuScoreStream= stuStream.mapToInt(Student1::getTotalScore);
 
 		IntSummaryStatistics stat = stuScoreStream.summaryStatistics();
 		System.out.println("count="+stat.getCount());
@@ -31,25 +33,25 @@ class StreamEx3 {
 	}
 }
 
-class Student implements Comparable<Student> {
+class Student1 implements Comparable<Student1> {
 	String name;
 	int ban;
 	int totalScore;
-	Student(String name, int ban, int totalScore) { 
+	Student1(String name, int ban, int totalScore) {
 		this.name = name;
 		this.ban  = ban;
 		this.totalScore = totalScore;
 	}
 
-	public String toString() { 
-	   return String.format("[%s, %d, %d]", name, ban, totalScore).toString(); 
+	public String toString() {
+		return String.format("[%s, %d, %d]", name, ban, totalScore).toString();
 	}
 
 	String getName()	{ return name;}
 	int getBan()		{ return ban;}
 	int getTotalScore() { return totalScore;}
 
-	public int compareTo(Student s) {
+	public int compareTo(Student1 s) {
 		return s.totalScore - this.totalScore;
 	}
 }

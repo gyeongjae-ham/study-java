@@ -1,15 +1,17 @@
+package the_essence_of_java.Chapter_12;
+
 class NewClass{
 	int newField;
 
-	int getNewField() { 
+	int getNewField() {
 		return newField;
-	}	
+	}
 
 	@Deprecated
 	int oldField;
 
 	@Deprecated
-	int getOldField() { 
+	int getOldField() {
 		return oldField;
 	}
 }
@@ -18,7 +20,7 @@ class AnnotationEx2 {
 	public static void main(String args[]) {
 		NewClass nc = new NewClass();
 
-		nc.oldField = 10;                     //@Depreacted°¡ ºÙÀº ´ë»óÀ» »ç¿ë
-		System.out.println(nc.getOldField()); //@Depreacted°¡ ºÙÀº ´ë»óÀ» »ç¿ë
+		nc.oldField = 10;                     //@Depreactedê°€ ë¶™ì€ ëŒ€ìƒì„ ì‚¬ìš©
+		System.out.println(nc.getOldField()); //@Depreactedê°€ ë¶™ì€ ëŒ€ìƒì„ ì‚¬ìš©
 	}
 }

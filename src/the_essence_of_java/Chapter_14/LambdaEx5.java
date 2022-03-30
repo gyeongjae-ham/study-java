@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_14;
+
 import java.util.function.*;
 import java.util.*;
 
@@ -6,7 +8,7 @@ class LambdaEx5 {
 		Supplier<Integer>  s = ()-> (int)(Math.random()*100)+1;
 		Consumer<Integer>  c = i -> System.out.print(i+", "); 
 		Predicate<Integer> p = i -> i%2==0; 
-		Function<Integer, Integer> f = i -> i/10*10; // i의 일의 자리를 없앤다.
+		Function<Integer, Integer> f = i -> i/10*10;
 
 		List<Integer> list = new ArrayList<>();	
 		makeRandomList(s, list);

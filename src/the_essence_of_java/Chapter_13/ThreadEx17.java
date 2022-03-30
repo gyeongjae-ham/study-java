@@ -1,4 +1,6 @@
- class ThreadEx17 {
+package the_essence_of_java.Chapter_13;
+
+class ThreadEx17 {
 	public static void main(String args[]) {
 		ThreadEx17_1 th1 = new ThreadEx17_1("*");
 		ThreadEx17_1 th2 = new ThreadEx17_1("**");

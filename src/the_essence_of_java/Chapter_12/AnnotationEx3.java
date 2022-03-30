@@ -1,33 +1,34 @@
+package the_essence_of_java.Chapter_12;
+
 import java.util.ArrayList;
 
-class NewClass{
+class NewClass1{
 	int newField;
 
-	int getNewField() { 
+	int getNewField() {
 		return newField;
-	}	
+	}
 
 	@Deprecated
 	int oldField;
 
 	@Deprecated
-	int getOldField() { 
+	int getOldField() {
 		return oldField;
 	}
 }
 
 
 class AnnotationEx3 {
-	@SuppressWarnings("deprecation")     // deprecation°ü·Ã °æ°í¸¦ ¾ïÁ¦
+	@SuppressWarnings("deprecation")     // deprecationê´€ë ¨ ê²½ê³ ë¥¼ ì–µì œ
 	public static void main(String args[]) {
-		NewClass nc = new NewClass();
+		NewClass1 nc = new NewClass1();
 
-		nc.oldField = 10;                     //@Depreacted°¡ ºÙÀº ´ë»óÀ» »ç¿ë
-		System.out.println(nc.getOldField()); //@Depreacted°¡ ºÙÀº ´ë»óÀ» »ç¿ë
+		nc.oldField = 10;                     //@Depreactedê°€ ë¶™ì€ ëŒ€ìƒì„ ì‚¬ìš©
+		System.out.println(nc.getOldField()); //@Depreactedê°€ ë¶™ì€ ëŒ€ìƒì„ ì‚¬ìš©
 
-		@SuppressWarnings("unchecked")               // Áö³×¸¯½º °ü·Ã °æ°í¸¦ ¾ïÁ¦
-		ArrayList<NewClass> list = new ArrayList();  // Å¸ÀÔÀ» ÁöÁ¤ÇÏÁö ¾ÊÀ½.
+		@SuppressWarnings("unchecked")               // ì§€ë„¤ë¦­ìŠ¤ ê´€ë ¨ ê²½ê³ ë¥¼ ì–µì œ
+		ArrayList<NewClass1> list = new ArrayList();  // íƒ€ì…ì„ ì§€ì •í•˜ì§€ ì•ŠìŒ.
 		list.add(nc);
 	}
 }
-

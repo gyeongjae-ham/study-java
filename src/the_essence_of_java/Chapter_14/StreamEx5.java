@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_14;
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -17,7 +19,6 @@ class StreamEx5 {
 		System.out.println("noEmptyStr="+noEmptyStr);
 		System.out.println("sWord="+ sWord.get());
 
-		// Stream<String[]>을 IntStream으로 변환
 		IntStream intStream1 = Stream.of(strArr).mapToInt(String::length);
 		IntStream intStream2 = Stream.of(strArr).mapToInt(String::length);
 		IntStream intStream3 = Stream.of(strArr).mapToInt(String::length);

@@ -1,4 +1,6 @@
- class ThreadEx12 {
+package the_essence_of_java.Chapter_13;
+
+class ThreadEx12 {
 	public static void main(String args[]) {
 		ThreadEx12_1 th1 = new ThreadEx12_1();
 		ThreadEx12_2 th2 = new ThreadEx12_2();
@@ -10,7 +12,7 @@
 			th1.sleep(2000);	
 		} catch(InterruptedException e) {}
 
-		System.out.print("<<main Á¾·á>>");
+		System.out.print("<<main ê°€ë‚˜ë‹¤ë¼>>");
 	} // main
 }
 
@@ -19,7 +21,7 @@ class ThreadEx12_1 extends Thread {
 		for(int i=0; i < 300; i++) {
 			System.out.print("-");
 		}
-		System.out.print("<<th1 Á¾·á>>");
+		System.out.print("<<th1 ê°€ë‚˜ë‹¤ë¼>>");
 	} // run()
 }
 
@@ -28,6 +30,6 @@ class ThreadEx12_2 extends Thread {
 		for(int i=0; i < 300; i++) {
 			System.out.print("|");
 		}
-		System.out.print("<<th2 Á¾·á>>");
+		System.out.print("<<th2 ê°€ë‚˜ë‹¤ë¼>>");
 	} // run()
 }

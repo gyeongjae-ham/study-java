@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_13;
+
 class ThreadEx3 {
 	public static void main(String args[]) throws Exception {
 		ThreadEx3_1 t1 = new ThreadEx3_1();

@@ -1,7 +1,9 @@
+package the_essence_of_java.Chapter_13;
+
 import java.util.concurrent.*;
 
 class ForkJoinEx1 {
-	static final ForkJoinPool pool = new ForkJoinPool();  // ¾²·¹µåÇ®À» »ı¼º
+	static final ForkJoinPool pool = new ForkJoinPool();  // ì“°ë ˆë“œí’€ì„ ìƒì„±
 
 	public static void main(String[] args) {
 		long from = 1L;
@@ -9,7 +11,7 @@ class ForkJoinEx1 {
 
 		SumTask task = new SumTask(from, to);
 
-		long start = System.currentTimeMillis(); // ½ÃÀÛ½Ã°£ ÃÊ±âÈ­
+		long start = System.currentTimeMillis(); // ì‹œì‘ì‹œê°„ ì´ˆê¸°í™”
 		Long result = pool.invoke(task);
 
 		System.out.println("Elapsed time(4 Core):"+(System.currentTimeMillis()-start));
@@ -17,13 +19,13 @@ class ForkJoinEx1 {
 		System.out.println();
 
 		result = 0L;
-		start = System.currentTimeMillis(); // ½ÃÀÛ½Ã°£ ÃÊ±âÈ­
+		start = System.currentTimeMillis(); // ì‹œì‘ì‹œê°„ ì´ˆê¸°í™”
 		for(long i=from;i<=to;i++)
 			result += i;
 
 		System.out.println("Elapsed time(1 Core):"+(System.currentTimeMillis()-start));
 		System.out.printf("sum of %d~%d=%d%n", from, to, result);
-	} // mainÀÇ ³¡
+	} // mainì˜ ë
 }
 
 class SumTask extends RecursiveTask<Long> {
@@ -38,12 +40,12 @@ class SumTask extends RecursiveTask<Long> {
 	public Long compute() {
 		long size = to - from;
 
-		if(size <= 5)     // ´õÇÒ ¼ıÀÚ°¡ 5°³ ÀÌÇÏ¸é
-			return sum(); // ¼ıÀÚÀÇ ÇÕÀ» ¹İÈ¯
+		if(size <= 5)     // ë”í•  ìˆ«ìê°€ 5ê°œ ì´í•˜ë©´
+			return sum(); // ìˆ«ìì˜ í•©ì„ ë°˜í™˜
 
 		long half = (from+to)/2;
 
-		// ¹üÀ§¸¦ ¹İÀ¸·Î ³ª´²¼­ µÎ °³ÀÇ ÀÛ¾÷À» »ı¼º
+		// ë²”ìœ„ë¥¼ ë°˜ìœ¼ë¡œ ë‚˜ëˆ ì„œ ë‘ ê°œì˜ ì‘ì—…ì„ ìƒì„±
 		SumTask leftSum  = new SumTask(from, half);
 		SumTask rightSum = new SumTask(half+1, to);
 
@@ -52,8 +54,8 @@ class SumTask extends RecursiveTask<Long> {
 		return rightSum.compute() + leftSum.join();
 	}
 
-	long sum() { // from~toÀÇ ¸ğµç ¼ıÀÚ¸¦ ´õÇÑ °á°ú¸¦ ¹İÈ¯
-		long tmp = 0L; 
+	long sum() { // from~toì˜ ëª¨ë“  ìˆ«ìë¥¼ ë”í•œ ê²°ê³¼ë¥¼ ë°˜í™˜
+		long tmp = 0L;
 
 		for(long i=from;i<=to;i++)
 			tmp += i;

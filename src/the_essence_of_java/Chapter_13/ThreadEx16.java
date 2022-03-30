@@ -1,4 +1,6 @@
- class ThreadEx16 {
+package the_essence_of_java.Chapter_13;
+
+class ThreadEx16 {
 	public static void main(String args[]) {
 		RunImplEx16 r1 = new RunImplEx16();
 		RunImplEx16 r2 = new RunImplEx16();
@@ -13,7 +15,7 @@
 
 		try {
 			Thread.sleep(2000);
-			r1.suspend();		// th1.suspend()이 아님에 주의
+			r1.suspend();
 			Thread.sleep(2000);
 			r2.suspend();
 			Thread.sleep(3000);

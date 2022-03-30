@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_12;
+
 enum Direction { EAST, SOUTH, WEST, NORTH }
 
 class EnumEx1 {
@@ -13,12 +15,12 @@ class EnumEx1 {
 		System.out.println("d1==d2 ? "+ (d1==d2));
 		System.out.println("d1==d3 ? "+ (d1==d3));
 		System.out.println("d1.equals(d3) ? "+ d1.equals(d3));
-//		System.out.println("d2 > d3 ? "+ (d1 > d3)); // ¿¡·¯
+//		System.out.println("d2 > d3 ? "+ (d1 > d3)); // ï¿½ï¿½ï¿½ï¿½
 		System.out.println("d1.compareTo(d3) ? "+ (d1.compareTo(d3)));
 		System.out.println("d1.compareTo(d2) ? "+ (d1.compareTo(d2)));
 
 		switch(d1) {
-			case EAST: // Direction.EAST¶ó°í ¾µ ¼ö ¾ø´Ù.
+			case EAST: // Direction.EASTï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 				System.out.println("The direction is EAST."); 
 				break;
 			case SOUTH:

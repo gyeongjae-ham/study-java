@@ -1,16 +1,18 @@
+package the_essence_of_java.Chapter_11;
+
 import java.util.*;
 
 class PropertiesEx1 {
 	public static void main(String[] args) {
 		Properties prop = new Properties();
 
-		// prop¿¡ Å°¿Í °ª(key, value)À» ÀúÀåÇÑ´Ù.
+		// propì— í‚¤ì™€ ê°’(key, value)ì„ ì €ì¥í•œë‹¤.
 		prop.setProperty("timeout","30");
 		prop.setProperty("language","kr");
 		prop.setProperty("size","10");
 		prop.setProperty("capacity","10");
 
-		// prop¿¡ ÀúÀåµÈ ¿ä¼ÒµéÀ» EnumerationÀ» ÀÌ¿ëÇØ¼­ Ãâ·ÂÇÑ´Ù.
+		// propì— ì €ì¥ëœ ìš”ì†Œë“¤ì„ Enumerationì„ ì´ìš©í•´ì„œ ì¶œë ¥í•œë‹¤.
 		Enumeration e = prop.propertyNames();
 
 		while(e.hasMoreElements()) {
@@ -19,12 +21,12 @@ class PropertiesEx1 {
 		}
 
 		System.out.println();
-		prop.setProperty("size","20");	// sizeÀÇ °ªÀ» 20À¸·Î º¯°æÇÑ´Ù.
+		prop.setProperty("size","20");	// sizeì˜ ê°’ì„ 20ìœ¼ë¡œ ë³€ê²½í•œë‹¤.
 		System.out.println("size="       + prop.getProperty("size"));
 		System.out.println("capacity="   + prop.getProperty("capacity", "20"));
 		System.out.println("loadfactor=" + prop.getProperty("loadfactor", "0.75"));
 
-		System.out.println(prop);	// prop¿¡ ÀúÀåµÈ ¿ä¼ÒµéÀ» Ãâ·ÂÇÑ´Ù.
-		prop.list(System.out);      // prop¿¡ ÀúÀåµÈ ¿ä¼ÒµéÀ» È­¸é(System.out)¿¡ Ãâ·ÂÇÑ´Ù.
+		System.out.println(prop);	// propì— ì €ì¥ëœ ìš”ì†Œë“¤ì„ ì¶œë ¥í•œë‹¤.
+		prop.list(System.out);      // propì— ì €ì¥ëœ ìš”ì†Œë“¤ì„ í™”ë©´(System.out)ì— ì¶œë ¥í•œë‹¤.
 	}
 }

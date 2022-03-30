@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_14;
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,33 +11,33 @@ class OptionalEx1 {
 		System.out.println("optInt="+optInt.get());
 
 		int result1 = Optional.of("123")
-							  .filter(x->x.length() >0)
-							  .map(Integer::parseInt).get();
+				.filter(x->x.length() >0)
+				.map(Integer::parseInt).get();
 
 		int result2 = Optional.of("")
-							  .filter(x->x.length() >0)
-							  .map(Integer::parseInt).orElse(-1);
+				.filter(x->x.length() >0)
+				.map(Integer::parseInt).orElse(-1);
 
 		System.out.println("result1="+result1);
 		System.out.println("result2="+result2);
 
 		Optional.of("456").map(Integer::parseInt)
-					      .ifPresent(x->System.out.printf("result3=%d%n",x));
+				.ifPresent(x->System.out.printf("result3=%d%n",x));
 
-		OptionalInt optInt1  = OptionalInt.of(0);   // 0¿ª ¿˙¿Â
-		OptionalInt optInt2  = OptionalInt.empty(); // ∫Û ∞¥√º∏¶ ª˝º∫
+		OptionalInt optInt1  = OptionalInt.of(0);   // 0ÏùÑ Ï†ÄÏû•
+		OptionalInt optInt2  = OptionalInt.empty(); // Îπà Í∞ùÏ≤¥Î•º ÏÉùÏÑ±
 
 		System.out.println(optInt1.isPresent());   // true
 		System.out.println(optInt2.isPresent());   // false
-		
+
 		System.out.println(optInt1.getAsInt());   // 0
 //		System.out.println(optInt2.getAsInt());   // NoSuchElementException
 		System.out.println("optInt1 ="+optInt1);
 		System.out.println("optInt2="+optInt2);
-	     	System.out.println("optInt1.equals(optInt2)?"+optInt1.equals(optInt2));
-	
-		Optional<String> opt  = Optional.ofNullable(null); // null¿ª ¿˙¿Â
-		Optional<String> opt2 = Optional.empty();          // ∫Û ∞¥√º∏¶ ª˝º∫
+		System.out.println("optInt1.equals(optInt2)?"+optInt1.equals(optInt2));
+
+		Optional<String> opt  = Optional.ofNullable(null); // nullÏùÑ Ï†ÄÏû•
+		Optional<String> opt2 = Optional.empty();          // Îπà Í∞ùÏ≤¥Î•º ÏÉùÏÑ±
 		System.out.println("opt ="+opt);
 		System.out.println("opt2="+opt2);
 		System.out.println("opt.equals(opt2)?"+opt.equals(opt2)); // true
@@ -52,6 +54,6 @@ class OptionalEx1 {
 			return optStr.map(Integer::parseInt).get();
 		} catch (Exception e){
 			return defaultValue;
-		}			
+		}
 	}
 }

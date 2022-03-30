@@ -1,21 +1,23 @@
+package the_essence_of_java.Chapter_14;
+
 @FunctionalInterface
-interface MyFunction {
+interface MyFunction1 {
 	void myMethod();  // public abstract void myMethod();
 }
 
 class LambdaEx2 {
 	public static void main(String[] args) 	{
-		MyFunction f = ()->{}; // MyFunction f = (MyFunction)(()->{}); 
-		Object obj = (MyFunction)(()-> {});  // ObjectÅ¸ÀÔÀ¸·Î Çüº¯È¯ÀÌ »ý·«µÊ
-		String str = ((Object)(MyFunction)(()-> {})).toString();
+		MyFunction1 f = ()->{}; // MyFunction1 f = (MyFunction1)(()->{});
+		Object obj = (MyFunction1)(()-> {});  // Objectíƒ€ìž…ìœ¼ë¡œ í˜•ë³€í™˜ì´ ìƒëžµë¨
+		String str = ((Object)(MyFunction1)(()-> {})).toString();
 
 		System.out.println(f);
 		System.out.println(obj);
 		System.out.println(str);
 
-//		System.out.println(()->{});	// ¿¡·¯. ¶÷´Ù½ÄÀº ObjectÅ¸ÀÔÀ¸·Î Çüº¯È¯ ¾ÈµÊ
-		System.out.println((MyFunction)(()-> {}));
-//		System.out.println((MyFunction)(()-> {}).toString()); // ¿¡·¯
-		System.out.println(((Object)(MyFunction)(()-> {})).toString());
+//		System.out.println(()->{});	// ì—ëŸ¬. ëžŒë‹¤ì‹ì€ Objectíƒ€ìž…ìœ¼ë¡œ í˜•ë³€í™˜ ì•ˆë¨
+		System.out.println((MyFunction1)(()-> {}));
+//		System.out.println((MyFunction1)(()-> {}).toString()); // ì—ëŸ¬
+		System.out.println(((Object)(MyFunction1)(()-> {})).toString());
 	}
 }

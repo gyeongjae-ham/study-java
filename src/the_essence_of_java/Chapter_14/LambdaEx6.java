@@ -1,12 +1,14 @@
+package the_essence_of_java.Chapter_14;
+
 import java.util.function.*;
 import java.util.*;
 
 class LambdaEx6 {
 	public static void main(String[] args) {
 		IntSupplier  s = ()-> (int)(Math.random()*100)+1;
-		IntConsumer  c = i -> System.out.print(i+", "); 
-		IntPredicate p = i -> i%2==0; 
-		IntUnaryOperator op = i -> i/10*10; // iÀÇ ÀÏÀÇ ÀÚ¸®¸¦ ¾ø¾Ø´Ù.
+		IntConsumer  c = i -> System.out.print(i+", ");
+		IntPredicate p = i -> i%2==0;
+		IntUnaryOperator op = i -> i/10*10; // iì˜ ì¼ì˜ ìë¦¬ë¥¼ ì—†ì•¤ë‹¤.
 
 		int[] arr = new int[10];
 
@@ -19,7 +21,7 @@ class LambdaEx6 {
 
 	static void makeRandomList(IntSupplier s, int[] arr) {
 		for(int i=0;i<arr.length;i++) {
-			arr[i] = s.getAsInt();  // get()ÀÌ ¾Æ´Ï¶ó getAsInt()ÀÓ¿¡ ÁÖÀÇ
+			arr[i] = s.getAsInt();  // get()ì´ ì•„ë‹ˆë¼ getAsInt()ì„ì— ì£¼ì˜
 		}
 	}
 
@@ -28,7 +30,7 @@ class LambdaEx6 {
 		for(int i : arr) {
 			if(p.test(i))
 				c.accept(i);
-		}	
+		}
 		System.out.println("]");
 	}
 
@@ -36,8 +38,8 @@ class LambdaEx6 {
 		int[] newArr = new int[arr.length];
 
 		for(int i=0; i<newArr.length;i++) {
-			newArr[i] = op.applyAsInt(arr[i]); // apply()°¡ ¾Æ´Ô¿¡ ÁÖÀÇ
-		}	
+			newArr[i] = op.applyAsInt(arr[i]); // apply()ê°€ ì•„ë‹˜ì— ì£¼ì˜
+		}
 
 		return newArr;
 	}

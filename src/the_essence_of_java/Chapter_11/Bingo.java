@@ -1,4 +1,6 @@
-import java.util.*; 
+package the_essence_of_java.Chapter_11;
+
+import java.util.*;
 
 class Bingo { 
       public static void main(String[] args) { 

@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_11;
+
 import java.util.*;
 
 class TreeSetEx2 {
@@ -8,7 +10,7 @@ class TreeSetEx2 {
 		for(int i=0; i < score.length; i++)
 			set.add(new Integer(score[i]));
 
-		System.out.println("50º¸´Ù ÀÛÀº °ª :"	+ set.headSet(new Integer(50)));
-		System.out.println("50º¸´Ù Å« °ª :"	+ set.tailSet(new Integer(50)));
+		System.out.println("50ê°€ë‚˜ë‹¤ë¼ë§ˆ :"	+ set.headSet(new Integer(50)));
+		System.out.println("50ê°€ë‚˜ë‹¤ë¼ë§ˆ :"	+ set.tailSet(new Integer(50)));
 	}
 }

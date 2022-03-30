@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_13;
+
 import javax.swing.JOptionPane;
 
 class ThreadEx7 {
@@ -5,8 +7,8 @@ class ThreadEx7 {
 		ThreadEx7_1 th1 = new ThreadEx7_1();
 		th1.start();
 
-		String input = JOptionPane.showInputDialog("¾Æ¹« °ªÀÌ³ª ÀÔ·ÂÇÏ¼¼¿ä."); 
-		System.out.println("ÀÔ·ÂÇÏ½Å °ªÀº " + input + "ÀÔ´Ï´Ù.");
+		String input = JOptionPane.showInputDialog("ì•„ë¬´ ê°’ì´ë‚˜ ì…ë ¥í•˜ì„¸ìš”.");
+		System.out.println("ì…ë ¥í•˜ì‹  ê°’ì€ " + input + "ì…ë‹ˆë‹¤.");
 	}
 }
 

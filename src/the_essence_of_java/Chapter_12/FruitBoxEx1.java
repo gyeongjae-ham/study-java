@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_12;
+
 import java.util.ArrayList;
 
 class Fruit				  { public String toString() { return "Fruit";}}
@@ -10,22 +12,22 @@ class FruitBoxEx1 {
 		Box<Fruit> fruitBox = new Box<Fruit>();
 		Box<Apple> appleBox = new Box<Apple>();
 		Box<Toy>   toyBox   = new Box<Toy>();
-//		Box<Grape> grapeBox = new Box<Apple>(); // ¿¡·¯. Å¸ÀÔ ºÒÀÏÄ¡
+//		Box<Grape> grapeBox = new Box<Apple>(); // ì—ëŸ¬. íƒ€ì… ë¶ˆì¼ì¹˜
 
 		fruitBox.add(new Fruit());
 		fruitBox.add(new Apple()); // OK. void add(Fruit item)
 
 		appleBox.add(new Apple());
 		appleBox.add(new Apple());
-//		appleBox.add(new Toy()); // ¿¡·¯. Box<Apple>¿¡´Â Apple¸¸ ´ãÀ» ¼ö ÀÖÀ½
+//		appleBox.add(new Toy()); // ì—ëŸ¬. Box<Apple>ì—ëŠ” Appleë§Œ ë‹´ì„ ìˆ˜ ìˆìŒ
 
 		toyBox.add(new Toy());
-//		toyBox.add(new Apple()); // ¿¡·¯. Box<Toy>¿¡´Â AppleÀ» ´ãÀ» ¼ö ¾øÀ½
+//		toyBox.add(new Apple()); // ì—ëŸ¬. Box<Toy>ì—ëŠ” Appleì„ ë‹´ì„ ìˆ˜ ì—†ìŒ
 
 		System.out.println(fruitBox);
 		System.out.println(appleBox);
 		System.out.println(toyBox);
-	}  // mainÀÇ ³¡
+	}  // mainì˜ ë
 }
 
 class Box<T> {

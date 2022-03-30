@@ -1,4 +1,6 @@
- import java.util.*;
+package the_essence_of_java.Chapter_13;
+
+import java.util.*;
 
 class ThreadEx11 {
 	public static void main(String args[]) throws Exception {
@@ -16,7 +18,7 @@ class ThreadEx11_1 extends Thread {
 
 	public void run() {
 		try {
-			sleep(5 * 1000);	// 5초 동안 기다린다.
+			sleep(5 * 1000);
 		} catch(InterruptedException e) {}
 	}
 }

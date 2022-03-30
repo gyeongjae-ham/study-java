@@ -1,53 +1,55 @@
-import java.util.*; 
+package the_essence_of_java.Chapter_11;
 
-public class ArrayListLinkedListTest { 
-      public static void main(String args[]) { 
-            // Ãß°¡ÇÒ µ¥ÀÌÅÍÀÇ °³¼ö¸¦ °í·ÁÇÏ¿© ÃæºĞÈ÷ Àâ¾Æ¾ßÇÑ´Ù.
+import java.util.*;
+
+public class ArrayListLinkedListTest {
+      public static void main(String args[]) {
+            // ì¶”ê°€í•  ë°ì´í„°ì˜ ê°œìˆ˜ë¥¼ ê³ ë ¤í•˜ì—¬ ì¶©ë¶„íˆ ì¡ì•„ì•¼í•œë‹¤.
             ArrayList al = new ArrayList(2000000);
-            LinkedList ll = new LinkedList(); 
+            LinkedList ll = new LinkedList();
 
-            System.out.println("= ¼øÂ÷ÀûÀ¸·Î Ãß°¡ÇÏ±â ="); 
-            System.out.println("ArrayList :"+add1(al)); 
-            System.out.println("LinkedList :"+add1(ll)); 
-            System.out.println(); 
-            System.out.println("= Áß°£¿¡ Ãß°¡ÇÏ±â ="); 
-            System.out.println("ArrayList :"+add2(al)); 
-            System.out.println("LinkedList :"+add2(ll)); 
-            System.out.println(); 
-            System.out.println("= Áß°£¿¡¼­ »èÁ¦ÇÏ±â ="); 
-            System.out.println("ArrayList :"+remove2(al)); 
-            System.out.println("LinkedList :"+remove2(ll)); 
-            System.out.println(); 
-            System.out.println("= ¼øÂ÷ÀûÀ¸·Î »èÁ¦ÇÏ±â ="); 
-            System.out.println("ArrayList :"+remove1(al)); 
-            System.out.println("LinkedList :"+remove1(ll)); 
-      } 
+            System.out.println("= ìˆœì°¨ì ìœ¼ë¡œ ì¶”ê°€í•˜ê¸° =");
+            System.out.println("ArrayList :"+add1(al));
+            System.out.println("LinkedList :"+add1(ll));
+            System.out.println();
+            System.out.println("= ì¤‘ê°„ì— ì¶”ê°€í•˜ê¸° =");
+            System.out.println("ArrayList :"+add2(al));
+            System.out.println("LinkedList :"+add2(ll));
+            System.out.println();
+            System.out.println("= ì¤‘ê°„ì—ì„œ ì‚­ì œí•˜ê¸° =");
+            System.out.println("ArrayList :"+remove2(al));
+            System.out.println("LinkedList :"+remove2(ll));
+            System.out.println();
+            System.out.println("= ìˆœì°¨ì ìœ¼ë¡œ ì‚­ì œí•˜ê¸° =");
+            System.out.println("ArrayList :"+remove1(al));
+            System.out.println("LinkedList :"+remove1(ll));
+      }
 
-      public static long add1(List list) { 
-            long start = System.currentTimeMillis(); 
-            for(int i=0; i<1000000;i++) list.add(i+""); 
-            long end = System.currentTimeMillis(); 
-            return end - start; 
-      } 
+      public static long add1(List list) {
+            long start = System.currentTimeMillis();
+            for(int i=0; i<1000000;i++) list.add(i+"");
+            long end = System.currentTimeMillis();
+            return end - start;
+      }
 
-      public static long add2(List list) { 
-            long start = System.currentTimeMillis(); 
-            for(int i=0; i<10000;i++) list.add(500, "X"); 
-            long end = System.currentTimeMillis(); 
-            return end - start; 
-      } 
+      public static long add2(List list) {
+            long start = System.currentTimeMillis();
+            for(int i=0; i<10000;i++) list.add(500, "X");
+            long end = System.currentTimeMillis();
+            return end - start;
+      }
 
-      public static long remove1(List list) { 
-            long start = System.currentTimeMillis(); 
-            for(int i=list.size()-1; i >= 0;i--) list.remove(i); 
-            long end = System.currentTimeMillis(); 
-            return end - start; 
-      } 
+      public static long remove1(List list) {
+            long start = System.currentTimeMillis();
+            for(int i=list.size()-1; i >= 0;i--) list.remove(i);
+            long end = System.currentTimeMillis();
+            return end - start;
+      }
 
-      public static long remove2(List list) { 
-            long start = System.currentTimeMillis(); 
-            for(int i=0; i<10000;i++) list.remove(i); 
-            long end = System.currentTimeMillis(); 
-            return end - start; 
-      } 
-} 
+      public static long remove2(List list) {
+            long start = System.currentTimeMillis();
+            for(int i=0; i<10000;i++) list.remove(i);
+            long end = System.currentTimeMillis();
+            return end - start;
+      }
+}

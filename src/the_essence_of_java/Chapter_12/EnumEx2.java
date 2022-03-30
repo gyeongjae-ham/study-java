@@ -1,11 +1,13 @@
-enum Direction { 
+package the_essence_of_java.Chapter_12;
+
+enum Direction1 {
 	EAST(1, ">"), SOUTH(2,"V"), WEST(3, "<"), NORTH(4,"^");
 
-	private static final Direction[] DIR_ARR = Direction.values();
+	private static final Direction1[] DIR_ARR = Direction1.values();
 	private final int value;
 	private final String symbol;
 
-	Direction(int value, String symbol) { // private Direction(int value)
+	Direction1(int value, String symbol) { // private Direction1(int value)
 		this.value  = value;
 		this.symbol = symbol;
 	}
@@ -13,18 +15,18 @@ enum Direction {
 	public int getValue()      { return value;  }
 	public String getSymbol()  { return symbol; }
 
-	public static Direction of(int dir) {
-        if (dir < 1 || dir > 4) {
-            throw new IllegalArgumentException("Invalid value :" + dir);
-        }
-        return DIR_ARR[dir - 1];		
-	}	
+	public static Direction1 of(int dir) {
+		if (dir < 1 || dir > 4) {
+			throw new IllegalArgumentException("Invalid value :" + dir);
+		}
+		return DIR_ARR[dir - 1];
+	}
 
-	// ¹æÇâÀ» È¸Àü½ÃÅ°´Â ¸Ş¼­µå. numÀÇ °ª¸¸Å­ 90µµ¾¿ ½Ã°è¹æÇâÀ¸·Î È¸ÀüÇÑ´Ù.
-	public Direction rotate(int num) {
+	// ë°©í–¥ì„ íšŒì „ì‹œí‚¤ëŠ” ë©”ì„œë“œ. numì˜ ê°’ë§Œí¼ 90ë„ì”© ì‹œê³„ë°©í–¥ìœ¼ë¡œ íšŒì „í•œë‹¤.
+	public Direction1 rotate(int num) {
 		num = num % 4;
 
-		if(num < 0) num +=4; // numÀÌ À½¼öÀÏ ¶§´Â ½Ã°è¹İ´ë ¹æÇâÀ¸·Î È¸Àü 
+		if(num < 0) num +=4; // numì´ ìŒìˆ˜ì¼ ë•ŒëŠ” ì‹œê³„ë°˜ëŒ€ ë°©í–¥ìœ¼ë¡œ íšŒì „
 
 		return DIR_ARR[(value-1+num) % 4];
 	}
@@ -32,22 +34,22 @@ enum Direction {
 	public String toString() {
 		return name()+getSymbol();
 	}
-} // enum Direction
+} // enum Direction1
 
 class EnumEx2 {
 	public static void main(String[] args) {
-		for(Direction d : Direction.values()) 
-			System.out.printf("%s=%d%n", d.name(), d.getValue()); 
+		for(Direction1 d : Direction1.values())
+			System.out.printf("%s=%d%n", d.name(), d.getValue());
 
-		Direction d1 = Direction.EAST;
-		Direction d2 = Direction.of(1);
+		Direction1 d1 = Direction1.EAST;
+		Direction1 d2 = Direction1.of(1);
 
 		System.out.printf("d1=%s, %d%n", d1.name(), d1.getValue());
 		System.out.printf("d2=%s, %d%n", d2.name(), d2.getValue());
 
-		System.out.println(Direction.EAST.rotate(1));
-		System.out.println(Direction.EAST.rotate(2));
-		System.out.println(Direction.EAST.rotate(-1));
-		System.out.println(Direction.EAST.rotate(-2));
+		System.out.println(Direction1.EAST.rotate(1));
+		System.out.println(Direction1.EAST.rotate(2));
+		System.out.println(Direction1.EAST.rotate(-1));
+		System.out.println(Direction1.EAST.rotate(-2));
 	}
 }

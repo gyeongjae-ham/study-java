@@ -1,44 +1,46 @@
+package the_essence_of_java.Chapter_11;
+
 import java.util.*;
 
 public class StackEx1 {
 	public static Stack back    = new Stack();
-	public static Stack forward = new Stack();  
+	public static Stack forward = new Stack();
 
 	public static void main(String[] args) {
-		goURL("1.³×ÀÌÆ®");
-		goURL("2.¾ßÈÄ");
-		goURL("3.³×ÀÌ¹ö");
-		goURL("4.´ÙÀ½");
+		goURL("1.ë„¤ì´íŠ¸");
+		goURL("2.ì•¼í›„");
+		goURL("3.ë„¤ì´ë²„");
+		goURL("4.ë‹¤ìŒ");
 
 		printStatus();
 
 		goBack();
-		System.out.println("= µÚ·Î°¡±â ¹öÆ°À» ´©¸¥ ÈÄ =");  
+		System.out.println("= ë’¤ë¡œê°€ê¸° ë²„íŠ¼ì„ ëˆ„ë¥¸ í›„ =");
 		printStatus();
 
 		goBack();
-		System.out.println("= 'µÚ·Î' ¹öÆ°À» ´©¸¥ ÈÄ =");  
+		System.out.println("= 'ë’¤ë¡œ' ë²„íŠ¼ì„ ëˆ„ë¥¸ í›„ =");
 		printStatus();
 
 		goForward();
-		System.out.println("= '¾ÕÀ¸·Î' ¹öÆ°À» ´©¸¥ ÈÄ =");  
+		System.out.println("= 'ì•ìœ¼ë¡œ' ë²„íŠ¼ì„ ëˆ„ë¥¸ í›„ =");
 		printStatus();
 
 		goURL("codechobo.com");
-		System.out.println("= »õ·Î¿î ÁÖ¼Ò·Î ÀÌµ¿ ÈÄ =");  
+		System.out.println("= ìƒˆë¡œìš´ ì£¼ì†Œë¡œ ì´ë™ í›„ =");
 		printStatus();
 	}
 
 	public static void printStatus() {
 		System.out.println("back:"+back);
 		System.out.println("forward:"+forward);
-		System.out.println("ÇöÀçÈ­¸éÀº '" + back.peek()+"' ÀÔ´Ï´Ù.");  
+		System.out.println("í˜„ì¬í™”ë©´ì€ '" + back.peek()+"' ì…ë‹ˆë‹¤.");
 		System.out.println();
 	}
 
 	public static void goURL(String url){
 		back.push(url);
-		if(!forward.empty()) 
+		if(!forward.empty())
 			forward.clear();
 	}
 

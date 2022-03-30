@@ -1,10 +1,12 @@
+package the_essence_of_java.Chapter_12;
+
 import java.util.*;
 
-class Fruit	{
+class Fruit3	{
 	String name;
 	int weight;
 	
-	Fruit(String name, int weight) {
+	Fruit3(String name, int weight) {
 		this.name   = name;
 		this.weight = weight;
 	}
@@ -13,48 +15,48 @@ class Fruit	{
 	
 }
 
-class Apple extends Fruit {
-	Apple(String name, int weight) {
+class Apple3 extends Fruit3 {
+	Apple3(String name, int weight) {
 		super(name, weight);
 	}
 }
 
-class Grape extends Fruit {
-	Grape(String name, int weight) {
+class Grape3 extends Fruit3 {
+	Grape3(String name, int weight) {
 		super(name, weight);
 	}
 }
 
-class AppleComp implements Comparator<Apple> {
-	public int compare(Apple t1, Apple t2) {
+class AppleComp implements Comparator<Apple3> {
+	public int compare(Apple3 t1, Apple3 t2) {
 		return t2.weight - t1.weight;
 	}
 }
 
-class GrapeComp implements Comparator<Grape> {
-	public int compare(Grape t1, Grape t2) {
+class GrapeComp implements Comparator<Grape3> {
+	public int compare(Grape3 t1, Grape3 t2) {
 		return t2.weight - t1.weight;
 	}
 }
 
-class FruitComp implements Comparator<Fruit> {
-	public int compare(Fruit t1, Fruit t2) {
+class FruitComp implements Comparator<Fruit3> {
+	public int compare(Fruit3 t1, Fruit3 t2) {
 		return t1.weight - t2.weight;
 	}
 }
 
 class FruitBoxEx4 {
 	public static void main(String[] args) {
-		FruitBox<Apple> appleBox = new FruitBox<Apple>();
-		FruitBox<Grape> grapeBox = new FruitBox<Grape>();
+		FruitBox3<Apple3> appleBox = new FruitBox3<Apple3>();
+		FruitBox3<Grape3> grapeBox = new FruitBox3<Grape3>();
 
-		appleBox.add(new Apple("GreenApple", 300));
-		appleBox.add(new Apple("GreenApple", 100));
-		appleBox.add(new Apple("GreenApple", 200));
+		appleBox.add(new Apple3("GreenApple", 300));
+		appleBox.add(new Apple3("GreenApple", 100));
+		appleBox.add(new Apple3("GreenApple", 200));
 
-		grapeBox.add(new Grape("GreenGrape", 400));
-		grapeBox.add(new Grape("GreenGrape", 300));
-		grapeBox.add(new Grape("GreenGrape", 200));
+		grapeBox.add(new Grape3("GreenGrape", 400));
+		grapeBox.add(new Grape3("GreenGrape", 300));
+		grapeBox.add(new Grape3("GreenGrape", 200));
 
 		Collections.sort(appleBox.getList(), new AppleComp());
 		Collections.sort(grapeBox.getList(), new GrapeComp());
@@ -68,9 +70,9 @@ class FruitBoxEx4 {
 	}  // main
 }
 
-class FruitBox<T extends Fruit> extends Box<T> {}
+class FruitBox3<T extends Fruit3> extends Box3<T> {}
 
-class Box<T> {
+class Box3<T> {
 	ArrayList<T> list = new ArrayList<T>();
 
 	void add(T item) {

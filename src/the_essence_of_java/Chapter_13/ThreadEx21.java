@@ -1,8 +1,10 @@
+package the_essence_of_java.Chapter_13;
+
 class ThreadEx21 {
 	public static void main(String args[]) {
 		Runnable r = new RunnableEx21();
-		new Thread(r).start(); // ThreadGroup¿¡ ÀÇÇØ ÂüÁ¶µÇ¹Ç·Î gc´ë»óÀÌ ¾Æ´Ï´Ù.
-		new Thread(r).start(); // ThreadGroup¿¡ ÀÇÇØ ÂüÁ¶µÇ¹Ç·Î gc´ë»óÀÌ ¾Æ´Ï´Ù.
+		new Thread(r).start(); // ThreadGroupì— ì˜í•´ ì°¸ì¡°ë˜ë¯€ë¡œ gcëŒ€ìƒì´ ì•„ë‹ˆë‹¤.
+		new Thread(r).start(); // ThreadGroupì— ì˜í•´ ì°¸ì¡°ë˜ë¯€ë¡œ gcëŒ€ìƒì´ ì•„ë‹ˆë‹¤.
 	}
 }
 
@@ -26,7 +28,7 @@ class RunnableEx21 implements Runnable {
 
 	public void run() {
 		while(acc.getBalance() > 0) {
-			// 100, 200, 300ÁßÀÇ ÇÑ °ªÀ» ÀÓÀ¸·Î ¼±ÅÃÇØ¼­ Ãâ±İ(withdraw)
+			// 100, 200, 300ì¤‘ì˜ í•œ ê°’ì„ ì„ìœ¼ë¡œ ì„ íƒí•´ì„œ ì¶œê¸ˆ(withdraw)
 			int money = (int)(Math.random() * 3 + 1) * 100;
 			acc.withdraw(money);
 			System.out.println("balance:"+acc.getBalance());

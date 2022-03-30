@@ -1,10 +1,12 @@
+package the_essence_of_java.Chapter_11;
+
 import java.util.*;
 
 class StackQueueEx {
 	public static void main(String[] args) {
 		Stack st = new Stack();
-		Queue q = new LinkedList();	 // QueueÀÎÅÍÆäÀÌ½ºÀÇ ±¸ÇöÃ¼ÀÎ LinkedList¸¦ »ç¿ë
-		
+		Queue q = new LinkedList();	 // Queueì¸í„°í˜ì´ìŠ¤ì˜ êµ¬í˜„ì²´ì¸ LinkedListë¥¼ ì‚¬ìš©
+
 		st.push("0");
 		st.push("1");
 		st.push("2");

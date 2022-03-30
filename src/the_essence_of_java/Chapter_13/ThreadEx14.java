@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_13;
+
 import javax.swing.JOptionPane;
 
 class ThreadEx14_1 {
@@ -5,9 +7,9 @@ class ThreadEx14_1 {
 		ThreadEx14_2 th1 = new ThreadEx14_2();
 		th1.start();
 
-		String input = JOptionPane.showInputDialog("¾Æ¹« °ªÀÌ³ª ÀÔ·ÂÇÏ¼¼¿ä."); 
-		System.out.println("ÀÔ·ÂÇÏ½Å °ªÀº " + input + "ÀÔ´Ï´Ù.");
-		th1.interrupt();   // interrupt()¸¦ È£ÃâÇÏ¸é, interrupted»óÅÂ°¡ true°¡ µÈ´Ù.
+		String input = JOptionPane.showInputDialog("ì•„ë¬´ ê°’ì´ë‚˜ ì…ë ¥í•˜ì„¸ìš”.");
+		System.out.println("ì…ë ¥í•˜ì‹  ê°’ì€ " + input + "ì…ë‹ˆë‹¤.");
+		th1.interrupt();   // interrupt()ë¥¼ í˜¸ì¶œí•˜ë©´, interruptedìƒíƒœê°€ trueê°€ ëœë‹¤.
 		System.out.println("isInterrupted():"+ th1.isInterrupted());
 	}
 }
@@ -20,10 +22,10 @@ class ThreadEx14_2 extends Thread {
 			System.out.println(i--);
 
 			try {
-				Thread.sleep(1000);  // 1ÃÊ Áö¿¬
+				Thread.sleep(1000);  // 1ì´ˆ ì§€ì—°
 			} catch(InterruptedException e) {}
 		}
 
-		System.out.println("Ä«¿îÆ®°¡ Á¾·áµÇ¾ú½À´Ï´Ù.");
+		System.out.println("ì¹´ìš´íŠ¸ê°€ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 	} // main
 }

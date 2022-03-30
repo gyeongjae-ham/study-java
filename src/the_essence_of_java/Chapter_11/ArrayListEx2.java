@@ -1,22 +1,24 @@
-import java.util.*; 
+package the_essence_of_java.Chapter_11;
 
-class ArrayListEx2 { 
-	public static void main(String[] args) { 
-		final int LIMIT = 10;	// ÀÚ¸£°íÀÚ ÇÏ´Â ±ÛÀÚÀÇ °³¼ö¸¦ ÁöÁ¤ÇÑ´Ù.
-		String source = "0123456789abcdefghijABCDEFGHIJ!@#$%^&*()ZZZ"; 
-		int length = source.length(); 
+import java.util.*;
 
-		List list = new ArrayList(length/LIMIT + 10); // Å©±â¸¦ ¾à°£ ¿©À¯ ÀÖ°Ô Àâ´Â´Ù.
+class ArrayListEx2 {
+	public static void main(String[] args) {
+		final int LIMIT = 10;	// ìë¥´ê³ ì í•˜ëŠ” ê¸€ìì˜ ê°œìˆ˜ë¥¼ ì§€ì •í•œë‹¤.
+		String source = "0123456789abcdefghijABCDEFGHIJ!@#$%^&*()ZZZ";
+		int length = source.length();
 
-		for(int i=0; i < length; i+=LIMIT) { 
-			if(i+LIMIT < length ) 
-				list.add(source.substring(i, i+LIMIT)); 
-			else 
-				list.add(source.substring(i)); 
-		} 
+		List list = new ArrayList(length/LIMIT + 10); // í¬ê¸°ë¥¼ ì•½ê°„ ì—¬ìœ  ìˆê²Œ ì¡ëŠ”ë‹¤.
 
-		for(int i=0; i < list.size(); i++) { 
-			System.out.println(list.get(i)); 
-		} 
+		for(int i=0; i < length; i+=LIMIT) {
+			if(i+LIMIT < length )
+				list.add(source.substring(i, i+LIMIT));
+			else
+				list.add(source.substring(i));
+		}
+
+		for(int i=0; i < list.size(); i++) {
+			System.out.println(list.get(i));
+		}
 	} // main()
-} 
+}

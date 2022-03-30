@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_11;
+
 import java.util.*;
 
 class HashSetEx1 {
@@ -6,9 +8,9 @@ class HashSetEx1 {
 		Set set = new HashSet();
 
 		for(int i=0; i < objArr.length; i++) {
-			set.add(objArr[i]);	// HashSet¿¡ objArrÀÇ ¿ä¼ÒµéÀ» ÀúÀåÇÑ´Ù.
+			set.add(objArr[i]);	// HashSetì— objArrì˜ ìš”ì†Œë“¤ì„ ì €ìž¥í•œë‹¤.
 		}
-             // HashSet¿¡ ÀúÀåµÈ ¿ä¼ÒµéÀ» Ãâ·ÂÇÑ´Ù.
-		System.out.println(set);	
+		// HashSetì— ì €ìž¥ëœ ìš”ì†Œë“¤ì„ ì¶œë ¥í•œë‹¤.
+		System.out.println(set);
 	}
 }
