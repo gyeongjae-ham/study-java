@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_16;
+
 import java.net.*;
 import java.io.*;
 
@@ -5,11 +7,11 @@ public class TcpIpClient5 {
 	public static void main(String args[]) {
 		try {
 			String serverIp = "127.0.0.1";
-            
-			// ¼ÒÄÏÀ» »ı¼ºÇÏ¿© ¿¬°áÀ» ¿äÃ»ÇÑ´Ù.
-			Socket socket = new Socket(serverIp, 7777); 
 
-			System.out.println("¼­¹ö¿¡ ¿¬°áµÇ¾ú½À´Ï´Ù.");
+			// ì†Œì¼“ì„ ìƒì„±í•˜ì—¬ ì—°ê²°ì„ ìš”ì²­í•œë‹¤.
+			Socket socket = new Socket(serverIp, 7777);
+
+			System.out.println("ì„œë²„ì— ì—°ê²°ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			Sender sender = new Sender(socket);
 			Receiver receiver = new Receiver(socket);
 
@@ -17,10 +19,10 @@ public class TcpIpClient5 {
 			receiver.start();
 		} catch(ConnectException ce) {
 			ce.printStackTrace();
-		} catch(IOException ie) {  
+		} catch(IOException ie) {
 			ie.printStackTrace();
 		} catch(Exception e) {
-			e.printStackTrace();  
-		}  
+			e.printStackTrace();
+		}
 	} // main
 } // class

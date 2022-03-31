@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
 
 class FileEx1 {
@@ -7,14 +9,14 @@ class FileEx1 {
 		String fileName = f.getName();
 		int pos = fileName.lastIndexOf(".");
 
-		System.out.println("°æ·Î¸¦ Á¦¿ÜÇÑ ÆÄÀÏÀÌ¸§ - " + f.getName());
-		System.out.println("È®ÀåÀÚ¸¦ Á¦¿ÜÇÑ ÆÄÀÏÀÌ¸§ - " + fileName.substring(0,pos));
-		System.out.println("È®ÀåÀÚ - " + fileName.substring(pos+1));
+		System.out.println("ê²½ë¡œë¥¼ ì œì™¸í•œ íŒŒì¼ì´ë¦„ - " + f.getName());
+		System.out.println("í™•ì¥ìë¥¼ ì œì™¸í•œ íŒŒì¼ì´ë¦„ - " + fileName.substring(0,pos));
+		System.out.println("í™•ì¥ì - " + fileName.substring(pos+1));
 
-		System.out.println("°æ·Î¸¦ Æ÷ÇÔÇÑ ÆÄÀÏÀÌ¸§ - "		+ f.getPath());
-		System.out.println("ÆÄÀÏÀÇ Àı´ë°æ·Î        - "	+ f.getAbsolutePath());
-		System.out.println("ÆÄÀÏÀÇ Á¤±Ô°æ·Î        - "	+ f.getCanonicalPath());
-		System.out.println("ÆÄÀÏÀÌ ¼ÓÇØ ÀÖ´Â µğ·ºÅä¸® - "	+ f.getParent());
+		System.out.println("ê²½ë¡œë¥¼ í¬í•¨í•œ íŒŒì¼ì´ë¦„ - "		+ f.getPath());
+		System.out.println("íŒŒì¼ì˜ ì ˆëŒ€ê²½ë¡œ        - "	+ f.getAbsolutePath());
+		System.out.println("íŒŒì¼ì˜ ì •ê·œê²½ë¡œ        - "	+ f.getCanonicalPath());
+		System.out.println("íŒŒì¼ì´ ì†í•´ ìˆëŠ” ë””ë ‰í† ë¦¬ - "	+ f.getParent());
 		System.out.println();
 		System.out.println("File.pathSeparator - "		+ File.pathSeparator);
 		System.out.println("File.pathSeparatorChar - "  + File.pathSeparatorChar);

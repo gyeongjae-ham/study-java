@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
 import java.util.Arrays;
 
@@ -18,7 +20,7 @@ class IOEx1 {
 			output.write(data);	// void write(int b)
 		}
 
-		outSrc = output.toByteArray(); // ½ºÆ®¸²ÀÇ ³»¿ëÀ» byte¹è¿­·Î ¹İÈ¯ÇÑ´Ù.
+		outSrc = output.toByteArray(); // ìŠ¤íŠ¸ë¦¼ì˜ ë‚´ìš©ì„ byteë°°ì—´ë¡œ ë°˜í™˜í•œë‹¤.
 
 		System.out.println("Input Source  :" + Arrays.toString(inSrc));
 		System.out.println("Output Source :" + Arrays.toString(outSrc));

@@ -1,10 +1,12 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
 
 class FileSplit {
 	public static void main(String[] args) {
 		if (args.length < 2) {
 			System.out.println("USAGE : java FileSplit filename SIZE_KB");
-			System.exit(0); // 프로그램을 종료한다.
+			System.exit(0);
 		}
 
 		final int VOLUME = Integer.parseInt(args[1]) * 1000;

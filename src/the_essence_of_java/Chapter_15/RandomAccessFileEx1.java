@@ -1,14 +1,16 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
 
 class RandomAccessFileEx1 {
 	public static void main(String[] args) {
 		try {
 			RandomAccessFile raf = new RandomAccessFile("test.dat", "rw");
-			System.out.println("ÆÄÀÏ Æ÷ÀÎÅÍÀÇ À§Ä¡: " + raf.getFilePointer());
+			System.out.println("íŒŒì¼ í¬ì¸í„°ì˜ ìœ„ì¹˜: " + raf.getFilePointer());
 			raf.writeInt(100);
-			System.out.println("ÆÄÀÏ Æ÷ÀÎÅÍÀÇ À§Ä¡: " + raf.getFilePointer());
+			System.out.println("íŒŒì¼ í¬ì¸í„°ì˜ ìœ„ì¹˜: " + raf.getFilePointer());
 			raf.writeLong(100L);
-			System.out.println("ÆÄÀÏ Æ÷ÀÎÅÍÀÇ À§Ä¡: " + raf.getFilePointer());
+			System.out.println("íŒŒì¼ í¬ì¸í„°ì˜ ìœ„ì¹˜: " + raf.getFilePointer());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

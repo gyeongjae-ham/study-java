@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_16;
+
 import java.net.*;
 import java.io.*;
 import java.util.Scanner;
@@ -8,9 +10,9 @@ public class TcpIpServer5 {
 		Socket socket = null;
 
 		try {
-			// ¼­¹ö¼ÒÄÏÀ» »ı¼ºÇÏ¿© 7777¹ø Æ÷Æ®¿Í °áÇÕ(bind)½ÃÅ²´Ù.
+			// ì„œë²„ì†Œì¼“ì„ ìƒì„±í•˜ì—¬ 7777ë²ˆ í¬íŠ¸ì™€ ê²°í•©(bind)ì‹œí‚¨ë‹¤.
 			serverSocket = new ServerSocket(7777);
-			System.out.println("¼­¹ö°¡ ÁØºñµÇ¾ú½À´Ï´Ù.");
+			System.out.println("ì„œë²„ê°€ ì¤€ë¹„ë˜ì—ˆìŠµë‹ˆë‹¤.");
 
 			socket = serverSocket.accept();
 
@@ -42,7 +44,7 @@ class Sender extends Thread {
 		Scanner scanner = new Scanner(System.in);
 		while(out!=null) {
 			try {
-				out.writeUTF(name+scanner.nextLine());		
+				out.writeUTF(name+scanner.nextLine());
 			} catch(IOException e) {}
 		}
 	} // run()

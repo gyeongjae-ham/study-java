@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_16;
+
 import java.net.*;
 import java.io.*;
 import java.util.Scanner;
@@ -5,15 +7,15 @@ import java.util.Scanner;
 public class TcpIpMultichatClient {
 	public static void main(String args[]) {
 		if(args.length!=1) {
-			System.out.println("USAGE: java TcpIpMultichatClient ´ëÈ­¸í");
+			System.out.println("USAGE: java TcpIpMultichatClient ëŒ€í™”ëª…");
 			System.exit(0);
 		}
 
 		try {
 			String serverIp = "127.0.0.1";
-            // ¼ÒÄÏÀ» »ı¼ºÇÏ¿© ¿¬°áÀ» ¿äÃ»ÇÑ´Ù.
-			Socket socket = new Socket(serverIp, 7777); 
-			System.out.println("¼­¹ö¿¡ ¿¬°áµÇ¾ú½À´Ï´Ù.");
+			// ì†Œì¼“ì„ ìƒì„±í•˜ì—¬ ì—°ê²°ì„ ìš”ì²­í•œë‹¤.
+			Socket socket = new Socket(serverIp, 7777);
+			System.out.println("ì„œë²„ì— ì—°ê²°ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			Thread sender   = new Thread(new ClientSender(socket, args[0]));
 			Thread receiver = new Thread(new ClientReceiver(socket));
 
@@ -42,7 +44,7 @@ public class TcpIpMultichatClient {
 			try {
 				if(out!=null) {
 					out.writeUTF(name);
-				}	
+				}
 
 				while(out!=null) {
 					out.writeUTF("["+name+"]"+scanner.nextLine());					}

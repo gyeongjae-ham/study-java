@@ -1,10 +1,12 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
 
 class FileMerge {
 	public static void main(String[] args) {
 		if (args.length != 1) {
 			System.out.println("USAGE : java FileMerge filename");
-			System.exit(0); // ÇÁ·Î±×·¥À» Á¾·áÇÑ´Ù.
+			System.exit(0); // í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•œë‹¤.
 		}
 
 		String mergeFilename = args[0];
@@ -24,7 +26,7 @@ class FileMerge {
 			File f = new File(mergeFilename + "_." + number);
 
 			while(f.exists()) {
-				f.setReadOnly();	// ÀÛ¾÷Áß¿¡ ÆÄÀÏÀÇ ³»¿ëÀÌ º¯°æµÇÁö ¾Êµµ·Ï ÇÑ´Ù.
+				f.setReadOnly();	// ì‘ì—…ì¤‘ì— íŒŒì¼ì˜ ë‚´ìš©ì´ ë³€ê²½ë˜ì§€ ì•Šë„ë¡ í•œë‹¤.
 				bis = new BufferedInputStream(new FileInputStream(f));
 
 				int data = 0;
@@ -40,9 +42,9 @@ class FileMerge {
 			bos.close();
 
 			File oldFile = new File(mergeFilename);
-            
+
 			if(oldFile.exists()) oldFile.delete();
-			
+
 			tempFile.renameTo(oldFile);
 		} catch (IOException e) {}
 	} // main

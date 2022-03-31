@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -14,19 +16,19 @@ class FileEx3 {
 		File dir = new File(args[0]);
 
 		if(!dir.exists() || !dir.isDirectory()) {
-			System.out.println("À¯È¿ÇÏÁö ¾ÊÀº µğ·ºÅä¸®ÀÔ´Ï´Ù.");
+			System.out.println("ìœ íš¨í•˜ì§€ ì•Šì€ ë””ë ‰í† ë¦¬ì…ë‹ˆë‹¤.");
 			System.exit(0);
-		} 
+		}
 
 		printFileList(dir);
 
 		System.out.println();
-		System.out.println("ÃÑ " + totalFiles + "°³ÀÇ ÆÄÀÏ");
-		System.out.println("ÃÑ " + totalDirs + "°³ÀÇ µğ·ºÅä¸®");
+		System.out.println("ì´ " + totalFiles + "ê°œì˜ íŒŒì¼");
+		System.out.println("ì´ " + totalDirs + "ê°œì˜ ë””ë ‰í† ë¦¬");
 	} // main
 
 	public static void printFileList(File dir) {
-		System.out.println(dir.getAbsolutePath()+" µğ·ºÅä¸®");
+		System.out.println(dir.getAbsolutePath()+" ë””ë ‰í† ë¦¬");
 		File[] files = dir.listFiles();
 
 		ArrayList subDir = new ArrayList();
@@ -47,7 +49,7 @@ class FileEx3 {
 		totalFiles += fileNum;
 		totalDirs  += dirNum;
 
-		System.out.println(fileNum + "°³ÀÇ ÆÄÀÏ, " + dirNum + "°³ÀÇ µğ·ºÅä¸®");
+		System.out.println(fileNum + "ê°œì˜ íŒŒì¼, " + dirNum + "ê°œì˜ ë””ë ‰í† ë¦¬");
 		System.out.println();
 
 		for(int i=0; i < subDir.size(); i++) {

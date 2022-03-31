@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_15;
+
 import java.util.Date;
 
 class PrintStreamEx1 {
@@ -7,8 +9,8 @@ class PrintStreamEx1 {
 
 		Date d = new Date();
 
-		System.out.printf("¹®ÀÚ %cÀÇ ÄÚµå´Â %d%n", i, i);
-		System.out.printf("%d´Â 8Áø¼ö·Î %o, 16Áø¼ö·Î %x%n", i ,i, i);
+		System.out.printf("ë¬¸ì %cì˜ ì½”ë“œëŠ” %d%n", i, i);
+		System.out.printf("%dëŠ” 8ì§„ìˆ˜ë¡œ %o, 16ì§„ìˆ˜ë¡œ %x%n", i ,i, i);
 		System.out.printf("%3d%3d%3d%n", 100, 90, 80);
 		System.out.println();
 		System.out.printf("123456789012345678901234567890%n");
@@ -16,8 +18,8 @@ class PrintStreamEx1 {
 		System.out.println();
 		System.out.printf("%-8.1f%8.1f %e%n",f,f,f);
 		System.out.println();
-		System.out.printf("¿À´ÃÀº %tY³â %tm¿ù %tdÀÏ ÀÔ´Ï´Ù.%n", d,d,d );
-		System.out.printf("Áö±İÀº %tH½Ã %tMºĞ %tSÃÊ ÀÔ´Ï´Ù.%n", d,d,d );
-		System.out.printf("Áö±İÀº %1$tH½Ã %1$tMºĞ %1$tSÃÊ ÀÔ´Ï´Ù.%n", d );
+		System.out.printf("ì˜¤ëŠ˜ì€ %tYë…„ %tmì›” %tdì¼ ì…ë‹ˆë‹¤.%n", d,d,d );
+		System.out.printf("ì§€ê¸ˆì€ %tHì‹œ %tMë¶„ %tSì´ˆ ì…ë‹ˆë‹¤.%n", d,d,d );
+		System.out.printf("ì§€ê¸ˆì€ %1$tHì‹œ %1$tMë¶„ %1$tSì´ˆ ì…ë‹ˆë‹¤.%n", d );
 	}
 }

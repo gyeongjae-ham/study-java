@@ -1,10 +1,12 @@
+package the_essence_of_java.Chapter_16;
+
 import java.net.*;
 import java.io.*;
 import java.util.*;
 
 public class TcpIpMultichatServer {
 	HashMap clients;
-	
+
 	TcpIpMultichatServer() {
 		clients = new HashMap();
 		Collections.synchronizedMap(clients);
@@ -16,11 +18,11 @@ public class TcpIpMultichatServer {
 
 		try {
 			serverSocket = new ServerSocket(7777);
-			System.out.println("¼­¹ö°¡ ½ÃÀÛµÇ¾ú½À´Ï´Ù.");
+			System.out.println("ì„œë²„ê°€ ì‹œì‘ë˜ì—ˆìŠµë‹ˆë‹¤.");
 
 			while(true) {
 				socket = serverSocket.accept();
-				System.out.println("["+socket.getInetAddress()+":"+socket.getPort()+"]"+"¿¡¼­ Á¢¼ÓÇÏ¿´½À´Ï´Ù.");
+				System.out.println("["+socket.getInetAddress()+":"+socket.getPort()+"]"+"ì—ì„œ ì ‘ì†í•˜ì˜€ìŠµë‹ˆë‹¤.");
 				ServerReceiver thread = new ServerReceiver(socket);
 				thread.start();
 			}
@@ -31,7 +33,7 @@ public class TcpIpMultichatServer {
 
 	void sendToAll(String msg) {
 		Iterator it = clients.keySet().iterator();
-		
+
 		while(it.hasNext()) {
 			try {
 				DataOutputStream out = (DataOutputStream)clients.get(it.next());
@@ -42,7 +44,7 @@ public class TcpIpMultichatServer {
 
 	public static void main(String args[]) {
 		new TcpIpMultichatServer().start();
-	} 
+	}
 	class ServerReceiver extends Thread {
 		Socket socket;
 		DataInputStream in;
@@ -60,10 +62,10 @@ public class TcpIpMultichatServer {
 			String name = "";
 			try {
 				name = in.readUTF();
-				sendToAll("#"+name+"´ÔÀÌ µé¾î¿À¼Ì½À´Ï´Ù.");
+				sendToAll("#"+name+"ë‹˜ì´ ë“¤ì–´ì˜¤ì…¨ìŠµë‹ˆë‹¤.");
 
 				clients.put(name, out);
-				System.out.println("ÇöÀç ¼­¹öÁ¢¼ÓÀÚ ¼ö´Â "+ clients.size()+"ÀÔ´Ï´Ù.");
+				System.out.println("í˜„ì¬ ì„œë²„ì ‘ì†ì ìˆ˜ëŠ” "+ clients.size()+"ì…ë‹ˆë‹¤.");
 
 				while(in!=null) {
 					sendToAll(in.readUTF());
@@ -71,10 +73,10 @@ public class TcpIpMultichatServer {
 			} catch(IOException e) {
 				// ignore
 			} finally {
-				sendToAll("#"+name+"´ÔÀÌ ³ª°¡¼Ì½À´Ï´Ù.");
+				sendToAll("#"+name+"ë‹˜ì´ ë‚˜ê°€ì…¨ìŠµë‹ˆë‹¤.");
 				clients.remove(name);
-				System.out.println("["+socket.getInetAddress() +":"+socket.getPort()+"]"+"¿¡¼­ Á¢¼ÓÀ» Á¾·áÇÏ¿´½À´Ï´Ù.");
-				System.out.println("ÇöÀç ¼­¹öÁ¢¼ÓÀÚ ¼ö´Â "+ clients.size()+"ÀÔ´Ï´Ù.");
+				System.out.println("["+socket.getInetAddress() +":"+socket.getPort()+"]"+"ì—ì„œ ì ‘ì†ì„ ì¢…ë£Œí•˜ì˜€ìŠµë‹ˆë‹¤.");
+				System.out.println("í˜„ì¬ ì„œë²„ì ‘ì†ì ìˆ˜ëŠ” "+ clients.size()+"ì…ë‹ˆë‹¤.");
 			} // try
 		} // run
 	} // ReceiverThread

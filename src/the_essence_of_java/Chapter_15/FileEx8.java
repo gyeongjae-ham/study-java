@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
 
 class FileEx8 {
@@ -15,7 +17,7 @@ class FileEx8 {
 		String ext = "." + args[0];
 
 		delete(dir, ext);
-		System.out.println(deletedFiles + "°³ÀÇ ÆÄÀÏÀÌ »èÁ¦µÇ¾ú½À´Ï´Ù.");
+		System.out.println(deletedFiles + "ê°œì˜ íŒŒì¼ì´ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 	} // end of main
 
 	public static void delete(File dir, String ext) {
@@ -30,10 +32,10 @@ class FileEx8 {
 				if(filename.endsWith(ext)) {
 					System.out.print(filename);
 					if(files[i].delete()) {
-						System.out.println(" - »èÁ¦ ¼º°ø");
-						deletedFiles++;     
+						System.out.println(" - ì‚­ì œ ì„±ê³µ");
+						deletedFiles++;
 					} else {
-						System.out.println(" - »èÁ¦ ½ÇÆĞ");
+						System.out.println(" - ì‚­ì œ ì‹¤íŒ¨");
 					}
 				} // if(filename.endsWith(ext)) {
 			} // if(files[i].isDirectory()) {

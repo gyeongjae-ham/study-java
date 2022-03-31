@@ -1,5 +1,7 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
-import java.util.Arrays;	
+import java.util.Arrays;
 
 class IOEx4 {
 	public static void main(String[] args) {
@@ -16,8 +18,8 @@ class IOEx4 {
 
 		try {
 			while(input.available() > 0) {
-				int len = input.read(temp); // ÀĞ¾î ¿Â µ¥ÀÌÅÍÀÇ °³¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
-				output.write(temp, 0, len); // ÀĞ¾î ¿Â ¸¸Å­¸¸ writeÇÑ´Ù.
+				int len = input.read(temp); // ì½ì–´ ì˜¨ ë°ì´í„°ì˜ ê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
+				output.write(temp, 0, len); // ì½ì–´ ì˜¨ ë§Œí¼ë§Œ writeí•œë‹¤.
 			}
 		} catch(IOException e) {}
 

@@ -1,4 +1,6 @@
- import java.io.*;
+package the_essence_of_java.Chapter_15;
+
+import java.io.*;
 
 class StringReaderWriterEx {
 	public static void main(String[] args) {

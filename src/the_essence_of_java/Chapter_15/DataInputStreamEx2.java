@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
 
 class DataInputStreamEx2 {
@@ -14,19 +16,19 @@ class DataInputStreamEx2 {
 
 			while(true) {
 				score = dis.readInt();
-				System.out.println(score);	
+				System.out.println(score);
 				sum += score;
 			}
 		} catch (EOFException e) {
-			System.out.println("¡°ºˆ¿« √—«’¿∫ " + sum +"¿‘¥œ¥Ÿ.");
+			System.out.println("Í∞ÄÎÇòÎã§Îùº " + sum +"Í∞ÄÎÇòÎã§Îùº.");
 		} catch (IOException ie) {
 			ie.printStackTrace();
 		} finally {
 			try {
 				if(dis!=null)
-					dis.close();			
+					dis.close();
 			} catch(IOException ie){
-				ie.printStackTrace();			
+				ie.printStackTrace();
 			}
 		} // try
 	} // main

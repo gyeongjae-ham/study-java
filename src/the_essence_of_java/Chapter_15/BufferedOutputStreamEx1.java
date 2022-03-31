@@ -1,19 +1,21 @@
- import java.io.*;
+package the_essence_of_java.Chapter_15;
+
+import java.io.*;
 
 class BufferedOutputStreamEx1 {
 	public static void main(String args[]) {
 		try {
-		     FileOutputStream fos = new FileOutputStream("123.txt");
-		     // BufferedOutputStreamÀÇ ¹öÆÛ Å©±â¸¦ 5·Î ÇÑ´Ù.
-		     BufferedOutputStream bos = new BufferedOutputStream(fos, 5);
-		     // ÆÄÀÏ 123.txt¿¡  1 ºÎÅÍ 9±îÁö Ãâ·ÂÇÑ´Ù.
-		     for(int i='1'; i <= '9'; i++) {
-			     bos.write(i);
-		     }
+			FileOutputStream fos = new FileOutputStream("123.txt");
+			// BufferedOutputStreamì˜ ë²„í¼ í¬ê¸°ë¥¼ 5ë¡œ í•œë‹¤.
+			BufferedOutputStream bos = new BufferedOutputStream(fos, 5);
+			// íŒŒì¼ 123.txtì—  1 ë¶€í„° 9ê¹Œì§€ ì¶œë ¥í•œë‹¤.
+			for(int i='1'; i <= '9'; i++) {
+				bos.write(i);
+			}
 
-		     fos.close();
+			fos.close();
 		} catch (IOException e) {
-		     e.printStackTrace();		
+			e.printStackTrace();
 		}
 	}
 }

@@ -1,4 +1,6 @@
- import java.io.*;
+package the_essence_of_java.Chapter_15;
+
+import java.io.*;
 
 class StandardIOEx3 {
 	public static void main(String[] args) {
@@ -8,12 +10,12 @@ class StandardIOEx3 {
 		try {
 			fos = new FileOutputStream("test.txt");
 			ps  = new PrintStream(fos);
-			System.setOut(ps);    //  System.outÀÇ Ãâ·Â´ë»óÀ» test.txtÆÄÀÏ·Î º¯°æ
+			System.setOut(ps);    //  System.outì˜ ì¶œë ¥ëŒ€ìƒì„ test.txtíŒŒì¼ë¡œ ë³€ê²½
 		} catch(FileNotFoundException e) {
 			System.err.println("File not found.");
 		}
 
-		System.out.println("Hello by System.out");		
-		System.err.println("Hello by System.err");		
+		System.out.println("Hello by System.out");
+		System.err.println("Hello by System.err");
 	}
 }

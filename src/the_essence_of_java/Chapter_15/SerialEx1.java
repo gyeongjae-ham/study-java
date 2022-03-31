@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -9,7 +11,7 @@ public class SerialEx1 {
 			BufferedOutputStream bos = new BufferedOutputStream(fos);
 
 			ObjectOutputStream out = new ObjectOutputStream(bos);
-			
+
 			UserInfo u1 = new UserInfo("JavaMan","1234",30);
 			UserInfo u2 = new UserInfo("JavaWoman","4321",26);
 
@@ -17,12 +19,12 @@ public class SerialEx1 {
 			list.add(u1);
 			list.add(u2);
 
-			// °´Ã¼¸¦ Á÷·ÄÈ­ÇÑ´Ù.
+			// ê°ì²´ë¥¼ ì§ë ¬í™”í•œë‹¤.
 			out.writeObject(u1);
 			out.writeObject(u2);
 			out.writeObject(list);
 			out.close();
-			System.out.println("Á÷·ÄÈ­°¡ Àß ³¡³µ½À´Ï´Ù.");
+			System.out.println("ì§ë ¬í™”ê°€ ì˜ ëë‚¬ìŠµë‹ˆë‹¤.");
 		} catch(IOException e) {
 			e.printStackTrace();
 		}

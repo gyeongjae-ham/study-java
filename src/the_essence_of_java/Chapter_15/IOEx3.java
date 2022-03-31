@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
 import java.util.Arrays;
 
@@ -6,7 +8,7 @@ class IOEx3 {
 		byte[] inSrc = {0,1,2,3,4,5,6,7,8,9};
 		byte[] outSrc = null;
 
-		byte[] temp = new byte[4];	// ¿Ã¿¸ øπ¡¶øÕ πËø≠¿« ≈©±‚∞° ¥Ÿ∏£¥Ÿ.
+		byte[] temp = new byte[4];	// Ïù¥Ï†Ñ ÏòàÏ†úÏôÄ Î∞∞Ïó¥Ïùò ÌÅ¨Í∏∞Í∞Ä Îã§Î•¥Îã§.
 
 		ByteArrayInputStream input = null;
 		ByteArrayOutputStream output = null;
@@ -19,17 +21,17 @@ class IOEx3 {
 		try {
 			while(input.available() > 0) {
 				input.read(temp);
-				output.write(temp); 
+				output.write(temp);
 //				System.out.println("temp :" + Arrays.toString(temp));
 
 				outSrc = output.toByteArray();
 				printArrays(temp, outSrc);
 			}
 		} catch(IOException e) {}
-	} // main¿« ≥°
+	} // mainÏùò ÎÅù
 
 	static void printArrays(byte[] temp, byte[] outSrc) {
 		System.out.println("temp          :" +Arrays.toString(temp));
-		System.out.println("Output Source :" +Arrays.toString(outSrc));	
+		System.out.println("Output Source :" +Arrays.toString(outSrc));
 	}
 }

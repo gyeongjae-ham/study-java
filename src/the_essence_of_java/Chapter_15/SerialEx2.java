@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -10,7 +12,7 @@ public class SerialEx2 {
 
 			ObjectInputStream in = new ObjectInputStream(bis);
 
-			// °´Ã¼¸¦ ÀĞÀ» ¶§´Â Ãâ·ÂÇÑ ¼ø¼­¿Í ÀÏÄ¡ÇØ¾ßÇÑ´Ù.
+			// ê°ì²´ë¥¼ ì½ì„ ë•ŒëŠ” ì¶œë ¥í•œ ìˆœì„œì™€ ì¼ì¹˜í•´ì•¼í•œë‹¤.
 			UserInfo u1 = (UserInfo)in.readObject();
 			UserInfo u2 = (UserInfo)in.readObject();
 			ArrayList list = (ArrayList)in.readObject();

@@ -1,29 +1,31 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
 
 class RandomAccessFileEx2 {
 	public static void main(String args[]) {
-//				      ¹øÈ£, ±¹¾î, ¿µ¾î, ¼öÇĞ					
+//				      ë²ˆí˜¸, êµ­ì–´, ì˜ì–´, ìˆ˜í•™
 		int[] score = {	1, 100,  90,  90,
-					    2,  70,  90, 100,
-						3, 100, 100, 100, 
-						4,  70,  60,  80, 
-						5,  70,  90, 100
-					   }; 
+				2,  70,  90, 100,
+				3, 100, 100, 100,
+				4,  70,  60,  80,
+				5,  70,  90, 100
+		};
 
 		try {
-		      RandomAccessFile raf = new RandomAccessFile("score2.dat", "rw");
+			RandomAccessFile raf = new RandomAccessFile("score2.dat", "rw");
 
-		      for(int i=0; i<score.length;i++) {
-		             raf.writeInt(score[i]);				
-		      }
+			for(int i=0; i<score.length;i++) {
+				raf.writeInt(score[i]);
+			}
 
-		      while(true) {
-			     System.out.println(raf.readInt());
-		      }
+			while(true) {
+				System.out.println(raf.readInt());
+			}
 		} catch (EOFException eof) {
-		       // readInt()¸¦ È£ÃâÇßÀ» ¶§ ´õ ÀÌ»ó ÀĞÀ» ³»¿ëÀÌ ¾øÀ¸¸é EOFExceptionÀÌ ¹ß»ıÇÑ´Ù.
+			// readInt()ë¥¼ í˜¸ì¶œí–ˆì„ ë•Œ ë” ì´ìƒ ì½ì„ ë‚´ìš©ì´ ì—†ìœ¼ë©´ EOFExceptionì´ ë°œìƒí•œë‹¤.
 		} catch (IOException e) {
-		       e.printStackTrace();		
+			e.printStackTrace();
 		}
 	} // main
 }

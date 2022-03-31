@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
 
 class BufferedReaderEx1 {
@@ -7,13 +9,13 @@ class BufferedReaderEx1 {
 			BufferedReader br = new BufferedReader(fr);
 
 			String line = "";
-			for(int i=1;(line = br.readLine())!=null;i++) { 
-				//  ";"¸¦ Æ÷ÇÔÇÑ ¶óÀÎÀ» Ãâ·ÂÇÑ´Ù.
-				if(line.indexOf(";")!=-1)	
+			for(int i=1;(line = br.readLine())!=null;i++) {
+				//  ";"ë¥¼ í¬í•¨í•œ ë¼ì¸ì„ ì¶œë ¥í•œë‹¤.
+				if(line.indexOf(";")!=-1)
 					System.out.println(i+":"+line);
 			}
-                     
-            br.close();
+
+			br.close();
 		} catch(IOException e) {}
 	} // main
 }

@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
 
 class InputStreamReaderEx {
@@ -8,16 +10,16 @@ class InputStreamReaderEx {
 			InputStreamReader isr = new InputStreamReader(System.in);
 			BufferedReader    br  = new BufferedReader(isr);
 
-			System.out.println("»ç¿ëÁßÀÎ OSÀÇ ÀÎÄÚµù :" + isr.getEncoding());
+			System.out.println("ì‚¬ìš©ì¤‘ì¸ OSì˜ ì¸ì½”ë”© :" + isr.getEncoding());
 
 			do {
-				System.out.print("¹®ÀåÀ» ÀÔ·ÂÇÏ¼¼¿ä. ¸¶Ä¡½Ã·Á¸é q¸¦ ÀÔ·ÂÇÏ¼¼¿ä.>");
+				System.out.print("ë¬¸ì¥ì„ ì…ë ¥í•˜ì„¸ìš”. ë§ˆì¹˜ì‹œë ¤ë©´ që¥¼ ì…ë ¥í•˜ì„¸ìš”.>");
 				line = br.readLine();
-				System.out.println("ÀÔ·ÂÇÏ½Å ¹®Àå : "+line);
+				System.out.println("ì…ë ¥í•˜ì‹  ë¬¸ì¥ : "+line);
 			} while(!line.equalsIgnoreCase("q"));
 
-//			br.close();   // System.in°ú °°Àº Ç¥ÁØÀÔÃâ·ÂÀº ´İÁö ¾Ê¾Æµµ µÈ´Ù.
-			System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+//			br.close();   // System.inê³¼ ê°™ì€ í‘œì¤€ì…ì¶œë ¥ì€ ë‹«ì§€ ì•Šì•„ë„ ëœë‹¤.
+			System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 		} catch(IOException e) {}
 	} // main
 }

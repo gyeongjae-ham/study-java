@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
 import java.util.Arrays;
 
@@ -14,8 +16,8 @@ class IOEx2 {
 		input  = new ByteArrayInputStream(inSrc);
 		output = new ByteArrayOutputStream();
 
-		input.read(temp,0,temp.length); // ÀĞ¾î ¿Â µ¥ÀÌÅÍ¸¦ ¹è¿­ temp¿¡ ´ã´Â´Ù.
-		output.write(temp,5, 5);	    // temp[5]ºÎÅÍ 5°³ÀÇ µ¥ÀÌÅÍ¸¦ writeÇÑ´Ù.
+		input.read(temp,0,temp.length); // ì½ì–´ ì˜¨ ë°ì´í„°ë¥¼ ë°°ì—´ tempì— ë‹´ëŠ”ë‹¤.
+		output.write(temp,5, 5);	    // temp[5]ë¶€í„° 5ê°œì˜ ë°ì´í„°ë¥¼ writeí•œë‹¤.
 
 		outSrc = output.toByteArray();
 

@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_15;
+
 public class UserInfo implements java.io.Serializable {
 	String name;
 	String password;

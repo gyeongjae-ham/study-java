@@ -1,3 +1,5 @@
+package the_essence_of_java.Chapter_15;
+
 import java.io.*;
 
 public class PipedReaderWriter {
@@ -5,8 +7,7 @@ public class PipedReaderWriter {
 		InputThread   inThread = new InputThread("InputThread");
 		OutputThread outThread = new OutputThread("OutputThread");
 
-        //PipedReader와 PipedWriter를 연결한다.
-		inThread.connect(outThread.getOutput());	
+		inThread.connect(outThread.getOutput());
 
 		inThread.start();
 		outThread.start();
